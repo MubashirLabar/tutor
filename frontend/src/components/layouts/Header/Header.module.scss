@@ -1,0 +1,106 @@
+@import "./../../../assets/styles/utils/index.scss";
+
+.Header--Root {
+  background: $color-white;
+  width: 100%;
+  height: 64px;
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  border-bottom: 1px solid #e4e6e8;
+
+  .header__logo {
+    @include flex-row;
+    align-items: center;
+
+    .logo__link {
+      margin-left: 26px;
+      .logo {
+        color: $color-primary-1;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.866666px;
+      }
+      .mobile__logo {
+        display: none;
+      }
+    }
+  }
+
+  .header__auth__links {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 63px;
+    align-items: center;
+    justify-content: center;
+
+    .link {
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-grey-5;
+      font-weight: 400;
+    }
+  }
+
+  .header__auth__action {
+    @include flex-row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+
+    .seprator {
+      margin: 0 12px;
+      color: $color-black-1;
+      font-size: 14px;
+      line-height: 15px;
+      font-weight: 400;
+    }
+
+    .link {
+      color: $color-black-1;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 15px;
+      font-weight: 400;
+    }
+  }
+
+  @include Tablets_Portrait {
+    grid-template-columns: 170px auto 170px;
+    
+    .header__auth__links {
+      grid-gap: 38px;
+    }
+  }
+
+  @include Mobile_Portrait {
+    @include flex-row;
+    justify-content: space-between;
+
+    .header__logo {
+      .logo__link {
+        margin-left: 1.125rem;
+
+        .logo {
+          display: none;
+        }
+
+        .mobile__logo {
+          display: block;
+          font-size: 22px;
+          color: $color-primary-1;
+        }
+      }
+    }
+
+    .header__auth__links {
+      display: none;
+    }
+
+    .header__auth__action {
+      justify-content: flex-end;
+      padding-right: 1rem;
+    }
+  }
+}

@@ -1,0 +1,961 @@
+@import "/src/assets/styles/utils/index.scss";
+@import "/src/assets/styles/global/index.scss";
+
+$borderColor: #e1e6ef;
+
+.agent-profile-page {
+  background: $page-background;
+  min-height: 100vh;
+  padding: 35px 0px;
+  @include media("<=large") {
+    padding: 35px 22px;
+  }
+  @include media("<=tablet") {
+    padding: 0px;
+  }
+  .agent-profile-wrapper {
+    background: $color-white;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 1023px;
+    margin: 0 auto;
+    @include media("<=large") {
+      width: 100%;
+    }
+    @include media("<=tablet") {
+      border-radius: 0px;
+    }
+    .profile-header-section {
+      position: relative;
+      border-bottom: 1px solid $borderColor;
+      .banner-section {
+        @include bgImage(0px);
+        height: 300px;
+        z-index: 0;
+        @include media("<=tablet") {
+          height: 230px;
+        }
+        @include media("<=phone") {
+          height: 200px;
+        }
+      }
+      .edit-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 2;
+        background: #ffffff;
+        border: 1px solid #828282;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        svg {
+          color: #605e5c;
+          height: 12px;
+        }
+        &.dp {
+          height: 23px;
+          width: 23px;
+          left: 7px;
+          top: 0px;
+          svg {
+            height: 9px;
+            left: 0px;
+            right: inherit;
+          }
+        }
+      }
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 30px;
+        margin-top: -45px;
+        padding-bottom: 18px;
+        @include media("<=phone") {
+          padding: 0px 22px 18px 22px;
+          margin-top: -40px;
+        }
+        .user_dp-blk {
+          height: 100px;
+          width: 100px;
+          position: relative;
+          @include media("<=tablet") {
+            height: 85px;
+            width: 85px;
+          }
+        }
+        .user-dp {
+          @include bgImage;
+        }
+        .online-dot {
+          height: 15px;
+          width: 15px;
+          border-radius: 50%;
+          position: absolute;
+          right: 17px;
+          bottom: 0px;
+          background: $color-green-0;
+          border: 2px solid $color-white;
+        }
+        .user-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 14px;
+          @include media("<=phone") {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+          }
+          .meta {
+            flex: 1;
+            .info {
+              display: flex;
+              align-items: center;
+              .edit-info {
+                background: #ffffff;
+                border: 1px solid #828282;
+                height: 24px;
+                width: 24px;
+                min-width: 24px;
+                border-radius: 50%;
+                margin-left: 15px;
+                margin-bottom: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg {
+                  color: #605e5c;
+                  height: 11px;
+                  width: 11px;
+                }
+              }
+              .name {
+                font-size: 18px;
+                font-weight: 600;
+                color: $color-black-1;
+              }
+            }
+
+            .text {
+              font-size: 13px;
+              font-weight: 300;
+              color: $color-grey-5;
+              margin-top: 4px;
+            }
+          }
+          .actions {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            @include media("<=phone") {
+              margin-left: 0px;
+              margin-top: 18px;
+              width: 100%;
+            }
+            .action-btn {
+              padding: 9px 15px;
+              width: 115px;
+              background: $color-brand-red;
+              color: $color-white;
+              font-size: 14px;
+              border: 1px solid $color-brand-red;
+              border-radius: 3px;
+              @include anim;
+              @include media("<=phone") {
+                width: 100%;
+              }
+              &:not(:last-child) {
+                margin-right: 15px;
+              }
+              &.bg-transparent {
+                background: transparent;
+                border-color: $color-grey-5;
+                color: $color-grey-5;
+              }
+            }
+            .copy-link {
+              background: #ffffff;
+              border: 1px solid #828282;
+              height: 28px;
+              width: 28px;
+              min-width: 28px;
+              border-radius: 50%;
+              margin-right: 3px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              svg {
+                color: #605e5c;
+                height: 15px;
+                width: 15px;
+              }
+              .copied {
+                font-size: 10px;
+                color: #ffffff;
+                background: #3d3c65;
+                position: absolute;
+                top: -25px;
+                width: max-content;
+                padding: 3px 6px;
+                right: -30px;
+                border-radius: 3px;
+                @include anim;
+                @include hide;
+                &:before {
+                  content: "";
+                  position: absolute;
+                  bottom: -3px;
+                  left: 49px;
+                  height: 8px;
+                  width: 8px;
+                  background: #3d3c65;
+                  transform: rotate(45deg);
+                }
+              }
+              &:hover {
+                .copied {
+                  top: -31px;
+                  @include show;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .agent-content {
+      width: 100%;
+      display: flex;
+      @include media("<=tablet") {
+        flex-direction: column;
+      }
+      .content-sidebar {
+        width: 260px;
+        border-right: 1px solid $borderColor;
+        @include media("<=tablet") {
+          width: 100%;
+          border-right: none;
+        }
+        .block {
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid $borderColor;
+          @include media("<=tablet") {
+            justify-content: space-between;
+          }
+          .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            height: 80px;
+            padding: 10px;
+            @include media("<=tablet") {
+              flex: inherit;
+              padding: 20px 22px;
+            }
+            .lbl {
+              color: $color-black-1;
+              font-size: 13px;
+              margin-bottom: 3px;
+            }
+            .txt {
+              color: $color-black-1;
+              font-size: 12px;
+              font-weight: 300;
+            }
+            &.verify {
+              align-items: flex-start;
+              padding: 10px 22px;
+              .lbl {
+                font-size: 14px;
+                font-weight: 500;
+              }
+              .id {
+                display: flex;
+                align-items: center;
+                margin-top: 3px;
+              }
+              .txt {
+              }
+              .badge {
+                margin-left: 10px;
+                svg {
+                  height: 17px;
+                  height: 17px;
+                  color: $color-green-0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .content-wrap {
+        flex: 1;
+        .service-block {
+          padding: 26px 30px;
+          border-bottom: 1px solid $borderColor;
+          @include media("<=phone") {
+            padding: 26px 22px;
+          }
+          .blk {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 14px;
+            &:last-child {
+              margin-bottom: 0px;
+            }
+            &.hdr {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              width: 100%;
+              margin-bottom: 12px;
+              .edit-service {
+                background: #ffffff;
+                border: 1px solid #828282;
+                height: 27px;
+                width: 27px;
+                min-width: 27px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg {
+                  color: #605e5c;
+                  height: 12px;
+                  width: 12px;
+                }
+              }
+            }
+            .title {
+              font-size: 15px;
+              font-weight: 600;
+              color: $color-black-1;
+            }
+            .text {
+              font-size: 13px;
+              font-weight: 300;
+              color: $color-black-1;
+              display: flex;
+              align-items: center;
+              line-height: 1.6;
+              align-items: baseline;
+              .dot {
+                height: 5px;
+                width: 5px;
+                background: $color-black-1;
+                border-radius: 50px;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+        .work-block {
+          padding: 28px 30px 0px 30px;
+          border-bottom: 1px solid $borderColor;
+          @include media("<=phone") {
+            padding: 28px 22px 0px 22px;
+          }
+          .title {
+            font-size: 15px;
+            font-weight: 600;
+            color: $color-black-1;
+          }
+          .tabs {
+            display: flex;
+            align-items: center;
+            margin-top: 7px;
+            margin-bottom: -1px;
+            .tab {
+              padding: 9px 22px;
+              font-size: 13px;
+              color: $color-black-1;
+              font-weight: 500;
+              border-bottom: 1px solid transparent;
+              @include anim;
+              cursor: pointer;
+              @include media("<=phone") {
+                padding: 9px 10px;
+                width: 100%;
+                text-align: center;
+              }
+              &.active {
+                border-bottom-color: $color-brand-red;
+                color: $color-brand-red;
+              }
+              &:not(:last-child) {
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+        .work-list-block {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+    }
+    .completed-job-card {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 30px;
+      @include media("<=phone") {
+        padding: 20px 22px;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $borderColor;
+      }
+      .card-hdr {
+        .card-title {
+          font-size: 15px;
+          font-weight: 600;
+          margin-bottom: 2px;
+        }
+        .stamps {
+          display: flex;
+          align-items: center;
+          .stars {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1px;
+            list-style: none;
+            .star {
+              &:not(:last-child) {
+                margin-right: 3px;
+              }
+              svg {
+                color: $color-green-0;
+                font-size: 13px;
+              }
+            }
+          }
+          .rating {
+            font-size: 14px;
+            font-weight: 500;
+            color: $color-black-1;
+            padding: 0px 7px;
+          }
+          .date {
+            font-size: 12px;
+            color: $color-grey-5;
+          }
+        }
+      }
+      .description {
+        font-size: 13px;
+        font-weight: 300;
+        color: $color-black-1;
+        display: flex;
+        align-items: center;
+        line-height: 1.6;
+        padding: 13px 0px;
+      }
+      .card-ftr {
+        display: flex;
+        align-items: center;
+        .price {
+          font-size: 14px;
+          color: $color-grey-5;
+        }
+        .dot {
+          height: 4px;
+          width: 4px;
+          border-radius: 50%;
+          background: $color-grey-5;
+          margin: 0px 8px;
+        }
+        .price-lbl {
+          font-size: 14px;
+          color: $color-grey-5;
+        }
+      }
+    }
+    .progress-job-card {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 30px;
+      &:not(:last-child) {
+        border-bottom: 1px solid $borderColor;
+      }
+      .card-hdr {
+        margin-bottom: 6px;
+        .card-title {
+          font-size: 15px;
+          font-weight: 600;
+        }
+        .stamps {
+          display: flex;
+          flex-direction: column;
+          margin-top: 8px;
+          .date {
+            font-size: 12px;
+            color: $color-grey-5;
+          }
+        }
+      }
+      .card-ftr {
+        display: flex;
+        align-items: center;
+        .job-status {
+          font-size: 14px;
+          color: $color-grey-5;
+          flex: 1;
+        }
+        .price-lbl {
+          flex: 2;
+          font-size: 13px;
+          color: $color-grey-5;
+        }
+      }
+    }
+  }
+}
+
+.agent-not-found {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    font-size: 35px;
+  }
+}
+
+.meta-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.meta-button-item {
+  border: 2px solid #a19f9d;
+  border-radius: 4px;
+  background: transparent;
+  width: 140px;
+  display: inline-block;
+  height: 45px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+  color: #605e5c;
+}
+
+.chat-button {
+  background-color: $color-brand-red;
+  color: $color-white;
+  border: none;
+}
+
+.meta-buttons-wrapper > button {
+  margin-left: 20px;
+}
+
+// Edit Cover Photo Modal
+.edit-cover-modal {
+  width: 750px;
+  padding: 0px;
+  @include media("<=medium") {
+    width: 700px;
+  }
+  @include media("<=tablet") {
+    width: 650px;
+  }
+  @include media("<=phoneH") {
+    width: 450px;
+  }
+  @include media("<=phone") {
+    width: 100%;
+  }
+  .modal-hdr {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    padding: 20px 20px;
+    height: 55px;
+    .modal-title {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 600;
+      color: $color-black-1;
+    }
+    .modal-cross-btn {
+      font-size: 26px;
+      color: $color-black-1;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  }
+  .modal-content {
+    padding: 20px 20px;
+    width: 100%;
+    text-align: center;
+    .cover-img {
+      @include bgImage(5px);
+      height: 200px;
+      @include media("<=phone") {
+        height: 150px;
+      }
+    }
+    .upload-btn {
+      color: $color-brand-red;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  .actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 30px;
+    @include media("<=tablet") {
+      margin-top: 14px;
+    }
+    .action-btn {
+      padding: 10px;
+      min-width: 120px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      background: $color-brand-red;
+      border-radius: 3px;
+      text-align: center;
+      cursor: pointer;
+      @include media("<=phone") {
+        min-width: inherit;
+        padding: 9px 22px;
+      }
+      &:hover {
+        opacity: 0.9;
+      }
+      &.transparent {
+        background: transparent;
+        color: $color-grey-5;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Edit Profile Photo Modal
+.edit-profile-photo-modal {
+  width: 420px;
+  padding: 0px;
+  @include media("<=phoneH") {
+    width: 380px;
+  }
+  @include media("<=phone") {
+    width: 100%;
+  }
+  .modal-hdr {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    padding: 20px 20px;
+    height: 55px;
+    .modal-title {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 600;
+      color: $color-black-1;
+    }
+    .modal-cross-btn {
+      font-size: 26px;
+      color: $color-black-1;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  }
+  .modal-content {
+    padding: 20px 20px;
+    width: 100%;
+    text-align: center;
+    .meta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0px;
+    }
+    .image {
+      @include bgImage;
+      height: 120px;
+      width: 120px;
+      min-width: 120px;
+    }
+    .upload-btn {
+      color: $color-brand-red;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  .actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 40px;
+    .action-btn {
+      padding: 10px;
+      min-width: 120px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      background: $color-brand-red;
+      border-radius: 3px;
+      text-align: center;
+      cursor: pointer;
+      @include media("<=phone") {
+        min-width: inherit;
+        padding: 9px 22px;
+      }
+      &:hover {
+        opacity: 0.9;
+      }
+      &.transparent {
+        background: transparent;
+        color: $color-grey-5;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Edit Profile Detail Modal
+.edit-profile-details-modal {
+  width: 400px;
+  padding: 0px;
+  @include media("<=phone") {
+    width: 100%;
+  }
+  .modal-hdr {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    padding: 20px 20px;
+    height: 55px;
+    .modal-title {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 600;
+      color: $color-black-1;
+    }
+    .modal-cross-btn {
+      font-size: 26px;
+      color: $color-black-1;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  }
+  .modal-content {
+    padding: 20px 20px;
+    width: 100%;
+    .form {
+      .field {
+        width: 100%;
+        margin-bottom: 18px;
+        .lbl {
+          font-size: 14px;
+          color: $color-black-1;
+          margin-bottom: 5px;
+        }
+        .iput {
+          outline: none;
+          background: none;
+          font-size: 14px;
+          color: $color-black-1;
+          padding: 8px 18px;
+          border: 1px solid $border-color-1;
+          width: 100%;
+          border-radius: 3px;
+          @include anim;
+          &:focus {
+            border-color: $color-black-1;
+          }
+        }
+        .icon {
+          svg {
+            height: 18px;
+            color: #a19f9d;
+          }
+        }
+      }
+    }
+  }
+  .actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 18px;
+    .action-btn {
+      padding: 10px;
+      min-width: 120px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      background: $color-brand-red;
+      border-radius: 3px;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.9;
+      }
+      &.transparent {
+        background: transparent;
+        color: $color-grey-5;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Edit Services Detail Modal
+.edit-service-details-modal {
+  width: 600px;
+  padding: 0px;
+  @include media("<=phone") {
+    width: 100%;
+  }
+  .modal-hdr {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    padding: 20px 20px;
+    height: 55px;
+    .modal-title {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 600;
+      color: $color-black-1;
+    }
+    .modal-cross-btn {
+      font-size: 26px;
+      color: $color-black-1;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  }
+  .modal-content {
+    padding: 20px 20px;
+    width: 100%;
+    .form {
+      .field {
+        width: 100%;
+        margin-bottom: 18px;
+        .lbl {
+          font-size: 14px;
+          color: $color-black-1;
+          margin-bottom: 5px;
+        }
+        .iput {
+          outline: none;
+          background: none;
+          font-size: 14px;
+          color: $color-black-1;
+          padding: 8px 18px;
+          border: 1px solid #ddd;
+          width: 100%;
+          border-radius: 3px;
+          @include anim;
+
+          &.area {
+            resize: none;
+            height: 200px;
+          }
+        }
+        .icon {
+          svg {
+            height: 18px;
+            color: #a19f9d;
+          }
+        }
+        div {
+          // div {
+          //   &:last-child {
+          //     height: 150px;
+          //     font-size: 14px;
+          //   }
+          // }
+        }
+      }
+    }
+  }
+  .actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 18px;
+    .action-btn {
+      padding: 10px;
+      min-width: 120px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      background: $color-brand-red;
+      border-radius: 3px;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.9;
+      }
+      &.transparent {
+        background: transparent;
+        color: $color-grey-5;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.RichEditor-editor {
+  height: 220px !important;
+  font-size: 14px !important;
+}
+
+.RichEditor-root {
+  background: #fff;
+  border: 1px solid #ddd;
+  font-family: "Georgia", serif;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.RichEditor-editor {
+  cursor: text;
+  font-size: 15px;
+  height: 220px;
+}
+
+.service-demo-editor {
+  height: 200px;
+}
+
+.rich-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  text-align: left;
+}
+
+.custom-css-class {
+  font-weight: bold;
+  font-style: normal;
+}

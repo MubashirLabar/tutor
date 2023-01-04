@@ -1,0 +1,14 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.language-bar {
+  display: flex;
+  align-items: center;
+  .langs {
+    font-size: 14px;
+    color: #6b7280;
+    &:not(:last-child) {
+      margin-right: 7px;
+    }
+  }
+}

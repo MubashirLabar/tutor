@@ -1,0 +1,294 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+$sectionMinHeight: 350px;
+
+.feedback-section {
+  background: $color-white;
+  display: flex;
+  flex-direction: column;
+  padding: 21px 28px;
+  @include media("<=tablet") {
+    padding: 21px $app-pending;
+  }
+  @include media("<=phone") {
+    padding: 21px $app-pending-small;
+  }
+  .not-eligible-blk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: 70px auto;
+    text-align: center;
+    padding-bottom: 12px;
+    @include media("<=phoneH") {
+      width: 100%;
+      margin: 40px auto;
+      padding: 0px 25px;
+    }
+    .title {
+      font-size: 18px;
+      font-weight: 500;
+      color: $color-black-1;
+      line-height: 1.35;
+      margin-bottom: 14px;
+      @include media("<=phone") {
+        padding: 0px 25px;
+      }
+    }
+    .text {
+      font-size: 13px;
+      color: $color-grey-5;
+      line-height: 1.5;
+      padding: 0px 20px;
+      @include media("<=phone") {
+        padding: 0px 0px;
+      }
+    }
+  }
+  .feedback-pending {
+    min-height: $sectionMinHeight;
+    padding: 4px 0px;
+    .block {
+      display: flex;
+      align-items: flex-start;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+      @include media("<=phone") {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .title {
+        font-size: 15px;
+        color: $color-black-1;
+        font-weight: 600;
+        margin-bottom: 11px;
+        @include media("<=phone") {
+          margin-bottom: 9px;
+        }
+      }
+      .left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        @include media("<=phone") {
+          margin-bottom: 22px;
+          width: 100%;
+        }
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        @include media("<=phone") {
+          width: 100%;
+        }
+        .place-feedback-btn {
+          outline: none;
+          border: 1px solid $color-brand-red;
+          background: $color-brand-red;
+          color: $color-white;
+          padding: 7px 22px;
+          max-width: fit-content;
+          font-size: 13px;
+          border-radius: 4px;
+          @include media("<=phone") {
+            max-width: 100%;
+          }
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+  .feedbacks-list {
+    min-height: $sectionMinHeight;
+    padding: 4px 0px;
+    .block {
+      display: flex;
+      align-items: flex-start;
+      @include media("<=phoneH") {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+      .title {
+        font-size: 15px;
+        color: $color-black-1;
+        font-weight: 600;
+        margin-bottom: 11px;
+        @include media("<=phoneH") {
+          margin-bottom: 7px;
+        }
+      }
+      .left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        @include media("<=phoneH") {
+          margin-bottom: 24px;
+          width: 100%;
+        }
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 75%;
+        @include media("<=medium") {
+          max-width: 100%;
+        }
+        @include media("<=phoneH") {
+          width: 100%;
+        }
+        .me-res {
+          margin-top: 5px;
+        }
+        .text {
+          font-size: 13px;
+          font-weight: 300;
+          color: $color-grey-5;
+          &.bold {
+            font-weight: 500;
+            min-width: fit-content;
+          }
+        }
+        .client-res {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  .star {
+    color: $color-brand-red;
+    margin-right: 3px;
+    height: 19px;
+    width: 19px;
+  }
+}
+
+// Provide Feedback Modal
+.provide-feedback-modal {
+  width: 520px;
+  padding: 0px;
+  @include media("<=phoneH") {
+    width: 100%;
+  }
+  .modal-hdr {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color-1;
+    padding: 20px 24px;
+    height: 55px;
+    .modal-title {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 600;
+      color: $color-black-1;
+    }
+    .modal-cross-btn {
+      font-size: 25px;
+      color: $color-grey-5;
+      font-weight: 200;
+      cursor: pointer;
+    }
+  }
+  .modal-content {
+    padding: 15px 24px;
+    width: 100%;
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+      color: $color-black-1;
+      margin-bottom: 12px;
+    }
+    .feedbacks {
+      .item {
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+        .stars {
+          margin-right: 20px;
+          .star {
+            color: #d2d0ce;
+          }
+        }
+        .label {
+          font-size: 13px;
+          color: $color-black-1;
+          font-weight: 300;
+        }
+      }
+    }
+    .total-score {
+      font-size: 14px;
+      font-weight: 600;
+      color: $color-black-1;
+      margin: 20px 0px;
+      span {
+        color: $color-brand-red;
+      }
+    }
+    .field {
+      .lbl {
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+      .iput {
+        width: 100%;
+        border: 1px solid $border-color-3;
+        resize: none;
+        border-radius: 2px;
+        padding: 10px 18px;
+        font-size: 14px;
+        color: $color-black-1;
+        &.area {
+          resize: none;
+          height: 150px;
+        }
+      }
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      padding: 22px 0px;
+      .action {
+        outline: none;
+        background: $color-brand-red;
+        color: $color-white;
+        padding: 9px 23px;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 3px;
+        margin-right: 12px;
+        &:hover {
+          opacity: 0.9;
+        }
+        &.transparent {
+          background: transparent;
+          color: $color-grey-5;
+          max-width: fit-content;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

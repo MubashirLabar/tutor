@@ -1,0 +1,22 @@
+@import "src/assets/styles/utils/index.scss";
+@import "src/assets/styles/global/index.scss";
+
+.signup-modal {
+  .auth-container {
+    width: 500px;
+    padding: 25px 25px;
+    @include media("<=phoneH") {
+      width: 100%;
+      padding: 28px 18px;
+    }
+  }
+  .cross-btn {
+    font-size: 25px;
+    color: $color-grey-5;
+    font-weight: 200;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 4px 16px;
+  }
+}

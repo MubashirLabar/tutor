@@ -1,0 +1,52 @@
+@import "src/assets/styles/utils/index.scss";
+@import "src/assets/styles/global/index.scss";
+
+.writing-form {
+  width: 320px;
+  margin-bottom: 40px;
+  @include media("<=phone") {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    .lbl {
+      font-size: 14px;
+      color: $color-black-1;
+      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      svg {
+        height: 13px;
+        width: 13px;
+        margin-left: 5px;
+        color: $color-grey-5;
+        cursor: pointer;
+      }
+    }
+    .iput {
+      width: 100%;
+      background: $color-white;
+      padding: 10px 15px;
+      font-size: 14px;
+      color: $color-black-1;
+      border-radius: 3px;
+      border: 1px solid rgba(17, 17, 19, 0.2);
+      &::placeholder {
+        color: #a19f9d;
+      }
+    }
+    .custom-selector {
+      background: $color-white;
+      padding: 10px 15px;
+      .selector-options {
+        top: 46px;
+      }
+    }
+  }
+}

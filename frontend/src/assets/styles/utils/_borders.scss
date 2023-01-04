@@ -1,0 +1,66 @@
+
+$radius : (xsm:6,sm:8,d:12,m:14,l:16,xl:18);
+
+@each $rad,$val in $radius {
+    .radius-top-left-#{$rad} {
+        border-top-left-radius:#{$val}px;
+    }
+    .radius-top-right-#{$rad} {
+        border-top-right-radius:#{$val}px;
+    }
+    .radius-bottom-left-#{$rad} {
+        border-bottom-left-radius:#{$val}px;
+    }
+    .radius-bottom-right-#{$rad} {
+        border-bottom-right-radius:#{$val}px;
+    }
+    
+    .radius-top-#{$rad} {
+        @extend .radius-top-left-#{$rad};
+        @extend .radius-top-right-#{$rad};
+    }
+    
+    .radius-bottom-#{$rad} {
+        @extend .radius-bottom-left-#{$rad};
+        @extend .radius-bottom-right-#{$rad};
+    }
+    
+    .radius-left-#{$rad} {
+        @extend .radius-top-left-#{$rad};
+        @extend .radius-bottom-left-#{$rad};
+    }
+    
+    .radius-right-#{$rad} {
+        @extend .radius-top-right-#{$rad};
+        @extend .radius-bottom-right-#{$rad};
+    }
+    
+    .radius-#{$rad} {
+        @extend .radius-top-#{$rad};
+        @extend .radius-bottom-#{$rad};
+    }
+}
+
+.rounded {
+    border-radius:50%;
+}
+
+.border-top {
+    border-top: 1px solid #e4e6e8;
+}
+.border-bottom {
+    border-bottom: 1px solid #e4e6e8;
+}
+.border-left {
+    border-left: 1px solid #e4e6e8;
+}
+.border-right {
+    border-right: 1px solid #e4e6e8;
+}
+.border {
+    @extend .border-top;
+    @extend .border-bottom;
+    @extend .border-left;
+    @extend .border-right;
+}
+

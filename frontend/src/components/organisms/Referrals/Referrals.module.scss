@@ -1,0 +1,256 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.referral-page {
+  .wrapper {
+    margin: 22px 0px;
+    .referral-hdr {
+      @include bgImage(0px);
+      background: $color-white;
+      border-radius: 8px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 22px 22px;
+      @include media("<=phoneH") {
+        flex-direction: column;
+        align-items: flex-start;
+        background-image: none !important;
+      }
+      @include media("<=phone") {
+        padding: 20px 20px;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        @include media("<=desktop") {
+          flex: 1.8;
+        }
+        @include media("<=phoneH") {
+          width: 100%;
+        }
+        .title {
+          font-size: 24px;
+          font-weight: 600;
+          color: $color-black-1;
+          margin-bottom: 7px;
+          @include media("<=phone") {
+            font-size: 22px;
+          }
+        }
+        .referral-field {
+          background: #f7f7f7;
+          padding: 10px 10px 10px 12px;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .lit {
+            .lbl {
+              color: $color-grey-5;
+              font-size: 14px;
+              @include media("<=phoneH") {
+                display: none;
+              }
+            }
+          }
+          .rit {
+            display: flex;
+            align-items: center;
+            @include media("<=phoneH") {
+              width: 100%;
+              justify-content: space-between;
+            }
+            .link {
+              color: $color-grey-5;
+              font-size: 14px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 350px;
+            }
+            .copy-btn {
+              margin-left: 11px;
+              svg {
+                color: $color-grey-5;
+                height: 19px;
+                width: 19px;
+                @include media("<=phoneH") {
+                  height: 17px;
+                  width: 17px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        @include media("<=phoneH") {
+          justify-content: flex-start;
+          align-items: flex-start;
+          width: 100%;
+          margin-top: 18px;
+        }
+        .total-signup {
+          background: $color-brand-red;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 150px;
+          color: $color-white;
+          height: 78px;
+          border-radius: 5px;
+          @include media("<=phoneH") {
+            width: 100%;
+          }
+          @include media("<=phone") {
+            height: 70px;
+          }
+          .num {
+            font-size: 500;
+            font-size: 18px;
+            margin-bottom: 3px;
+          }
+          .txt {
+            font-size: 13px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    .details-table {
+      background: $color-white;
+      border-radius: 8px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 24px;
+      margin-top: 20px;
+      @include media("<=phone") {
+        padding: 20px 20px;
+      }
+      .table-hdr {
+        display: flex;
+        align-items: center;
+        &.row {
+          background: #fafafb;
+          border-radius: 6px;
+          .col {
+            .text {
+              color: #3b3a39;
+              font-size: 13px;
+              text-transform: uppercase;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        padding: 8px 30px;
+        @include media("<=phone") {
+          padding: 8px 20px;
+        }
+        .col {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          &:last-child {
+            justify-content: flex-end;
+          }
+          .image {
+            @include bgImage;
+            height: 25px;
+            width: 25px;
+            min-width: 25px;
+            margin-right: 10px;
+          }
+          .text {
+            font-size: 13px;
+            color: $color-black-1;
+            &.name {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .list {
+        .row {
+          border-bottom: 1px solid #e0e6f1;
+          padding: 18px 30px;
+          @include media("<=phone") {
+            padding: 18px 20px;
+          }
+          .col {
+            margin-right: 12px;
+            .user {
+              display: flex;
+              align-items: center;
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+    .chat-popup {
+      background: #ffffff;
+      box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.12);
+      padding: 18px;
+      position: absolute;
+      z-index: 10;
+      top: 5px;
+      left: 0px;
+      width: 100%;
+      width: 210px;
+      &.show {
+        @include show;
+        @include dropDownAnim;
+      }
+      .hide {
+        @include hide;
+      }
+      .cross-btn {
+        position: absolute;
+        font-size: 20px;
+        font-weight: 300;
+        color: $color-grey-5;
+        top: 1px;
+        right: 8px;
+      }
+      .meta {
+        .img {
+          @include bgImage;
+          height: 32px;
+          width: 32px;
+          min-width: 32px;
+          border-radius: 50%;
+        }
+        .nam {
+          font-size: 14px;
+          color: $color-black-1;
+          margin-top: 7px;
+        }
+      }
+      .chat-btn {
+        background: $color-brand-red;
+        padding: 8px 20px;
+        color: #fff;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+        margin-top: 14px;
+        border-radius: 3px;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}

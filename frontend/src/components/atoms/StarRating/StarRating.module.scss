@@ -1,0 +1,23 @@
+@import "/src/assets/styles/utils/index.scss";
+@import "/src/assets/styles/global/index.scss";
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  .radio {
+    display: none;
+  }
+  .str {
+    margin-right: 14px;
+    &:last-child {
+      margin-right: 0px;
+    }
+    .ico {
+      font-size: 22px;
+      color: #e4e5e9;
+      &.fl {
+        color: $color-brand-red;
+      }
+    }
+  }
+}

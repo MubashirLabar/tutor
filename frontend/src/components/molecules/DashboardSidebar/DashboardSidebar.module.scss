@@ -1,0 +1,137 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.Dashbord__sidebar--Root {
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: $sidebarWidth;
+  padding: 18px 18px;
+  z-index: 1001;
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  @include media("<=desktop") {
+    left: -$sidebarWidth;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &.open-sidebar {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+  .logo {
+    line-height: 1;
+    padding: 0px 3px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: $color-brand-red;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    @include media("<=desktop") {
+      margin-top: 40px;
+    }
+    .link {
+      display: flex;
+      // align-items: center;
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 4px;
+      @include anim;
+      &:not(:last-child) {
+        margin-bottom: 11px;
+        @include media("<=desktop") {
+          margin-bottom: 5px;
+        }
+      }
+      .icon {
+        margin-right: 14px;
+        line-height: 1;
+        margin-bottom: -1px;
+        @include anim;
+        svg {
+          height: 17px;
+          width: 17px;
+          color: $color-grey-5;
+          @include anim;
+        }
+      }
+      .lbl {
+        color: $color-grey-5;
+        font-size: 14px;
+        @include anim;
+        line-height: 1;
+        font-weight: 300;
+      }
+      &.active,
+      &:hover {
+        background: $color-brand-red;
+        .lbl {
+          color: #fff;
+          font-weight: 500;
+        }
+        .icon {
+          svg {
+            color: #fff;
+          }
+        }
+      }
+      &:hover {
+        .lbl {
+          font-weight: 300;
+        }
+      }
+      &.active {
+        .lbl {
+          font-weight: 500;
+        }
+      }
+
+      &.profile {
+        @include media("<=desktop") {
+          display: flex;
+        }
+      }
+      &.notifications {
+        display: none;
+        @include media("<=desktop") {
+          display: flex;
+        }
+      }
+    }
+    .help {
+      .icon {
+        margin-bottom: -3px;
+      }
+    }
+  }
+}
+.sidebar-overlay {
+  inset: 0;
+  position: fixed;
+  background: $overlayBackground;
+  z-index: 1000;
+  @include anim;
+  @include hide;
+  @include media("<=desktop") {
+    &.hide {
+      @include hide;
+    }
+    &.show {
+      @include show;
+    }
+  }
+}

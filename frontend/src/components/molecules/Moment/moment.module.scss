@@ -1,0 +1,86 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.moment-section {
+  .wrapper {
+    .content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 50px 0px 60px 0px;
+      .hdr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        .title {
+          font-size: 26px;
+          font-weight: 700;
+          color: $color-black-1;
+        }
+        .text {
+          font-size: 15px;
+          color: $color-grey-1;
+          font-weight: 300;
+          max-width: 400px;
+          margin-top: 8px;
+          line-height: 1.6;
+        }
+      }
+      .moment-steps {
+        width: 100%;
+        margin-top: 48px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+        @include media("<=desktop") {
+          grid-column-gap: 20px;
+          grid-row-gap: 20px;
+        }
+        @include media("<=medium") {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include media("<=phone") {
+          grid-column-gap: 10px;
+          grid-row-gap: 10px;
+        }
+        .block {
+          flex: 1;
+          border: 1px solid #a19f9d;
+          padding: 20px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          height: 280px;
+          border-radius: 5px;
+          @include media("<=phone") {
+            height: 250px;
+          }
+          .image {
+            height: 120px;
+            margin-bottom: 42px;
+          }
+          .meta {
+            .label {
+              font-size: 16px;
+              font-weight: 600;
+              color: $color-black-1;
+              margin-bottom: 5px;
+              max-width: 95%;
+              line-height: 1.4;
+            }
+            .btn {
+              font-size: 14px;
+              font-weight: 600;
+              color: $color-brand-red;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

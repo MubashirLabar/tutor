@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/utils/index.scss";
+
+.Project__details--form {
+  padding: 0 1.5rem;
+  margin-bottom: 1rem;
+  
+  @include lg {
+    margin-bottom: 2rem;
+  }
+  
+  .form__title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 36px;
+    color: #201F1E;
+    margin-bottom: 0.5rem;
+    
+    @include lg {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .project__details--wrapper {
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    background-color: #fff;
+
+    textarea {
+      width: 100%;
+      height: 140px;
+      min-height: 100px;
+      max-height: 480px;
+      resize: vertical;
+      overflow-y: auto;
+      font-size: 13px;
+      outline: none;
+    }
+  }
+}

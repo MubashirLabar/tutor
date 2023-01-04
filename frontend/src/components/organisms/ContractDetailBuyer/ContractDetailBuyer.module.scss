@@ -1,0 +1,239 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.contract-detail-buyer {
+  min-height: 100vh;
+  background-color: $color-grey-0;
+  @include media("<=medium") {
+    min-height: auto;
+  }
+  .wrapper {
+    padding-bottom: 45px;
+    @include media("<=medium") {
+      padding-bottom: 0px;
+      padding: 0px 0px;
+    }
+    .page-hdr {
+      width: 100%;
+      padding: 24px 0px;
+      @include media("<=medium") {
+        padding: 22px $app-pending;
+      }
+      .page-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: $color-black-1;
+      }
+    }
+    .edux-blk {
+      background: $color-white;
+      width: 100%;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $border-color-3;
+      @include media("<=tablet") {
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px $app-pending;
+      }
+      @include media("<=phone") {
+        padding: 20px $app-pending-small;
+      }
+      .left-side {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        @include media("<=tablet") {
+          margin-bottom: 20px;
+          width: 100%;
+        }
+        .user-info {
+          display: flex;
+          align-items: center;
+          .user_dp-blk {
+            height: 58px;
+            width: 58px;
+            min-width: 58px;
+            position: relative;
+            margin-right: 10px;
+            .user-dp {
+              @include bgImage;
+            }
+          }
+          .meta {
+            width: 100%;
+            overflow: hidden;
+            .name {
+              font-size: 17px;
+              font-weight: 500;
+              color: $color-black-1;
+              margin-bottom: 2px;
+            }
+            .stamp {
+              font-size: 13px;
+              font-weight: 300;
+              color: $color-grey-5;
+            }
+          }
+        }
+      }
+      .right-side {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include media("<=tablet") {
+          width: 100%;
+          justify-content: flex-start;
+        }
+        .action-btn {
+          border: 1px solid $color-brand-red;
+          background: $color-brand-red;
+          padding: 7px 12px;
+          border-radius: 3px;
+          font-size: 13px;
+          color: $color-white;
+          text-align: center;
+          &:not(:last-child) {
+            margin-right: 12px;
+            @include media("<=phone") {
+              margin-right: 10px;
+            }
+          }
+          &:hover {
+            opacity: 0.9;
+          }
+          &.transparent {
+            background: transparent;
+            color: $color-brand-red;
+          }
+        }
+      }
+    }
+    .tab-bar {
+      background-color: $color-white;
+      border-bottom: 1px solid $border-color-2;
+      @include media("<=phoneH") {
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        .item {
+          cursor: pointer;
+          margin-right: 3px;
+          @include anim;
+          font-size: 14px;
+          font-weight: 500;
+          color: $color-black-1;
+          padding: 16px 26px 14px 26px;
+          position: relative;
+          text-align: center;
+          min-width: fit-content;
+          @include media("<=tablet") {
+            padding: 16px 20px 14px 20px;
+          }
+          @include media("<=phoneH") {
+            padding: 16px 18px 14px 18px;
+          }
+          &:last-child {
+            margin-right: 0px;
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $color-brand-red;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -1.25px;
+            left: 0;
+            right: 0;
+            @include media("<=phoneH") {
+              height: 3px;
+            }
+          }
+          &.active {
+            color: $color-brand-red;
+            &::after {
+              width: 100%;
+            }
+          }
+          &:hover {
+            color: $color-brand-red;
+            &::after {
+              width: 100%;
+            }
+            @include media("<=phoneH") {
+              color: inherit;
+            }
+          }
+        }
+        .menu-btn {
+          padding-left: 22px;
+          padding-right: 22px;
+          position: relative;
+          cursor: pointer;
+          svg {
+            height: 16px;
+            width: 16px;
+            color: $color-grey-1;
+          }
+          .more-links {
+            position: absolute;
+            background: $color-white;
+            filter: drop-shadow(0px 4px 8px rgba(24, 36, 60, 0.15));
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 6px 0px 6px 0px;
+            top: 33px;
+            right: 14px;
+            z-index: 9;
+            &:before {
+              content: "";
+              position: absolute;
+              top: -6px;
+              right: 10px;
+              height: 11px;
+              width: 11px;
+              background: $color-white;
+              transform: rotate(45deg);
+            }
+            &.hide {
+              display: none;
+            }
+            &.show {
+              @include dropDownAnim;
+            }
+            .link {
+              font-size: 13px;
+              font-weight: 300;
+              color: $color-black-1;
+              padding: 6px 20px;
+              width: 100%;
+              text-align: start;
+              @include anim(0.2s);
+              min-width: fit-content;
+              &:hover {
+                width: 100%;
+                background: #f8f8f8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

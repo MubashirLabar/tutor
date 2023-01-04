@@ -1,0 +1,62 @@
+{
+    "Register": {
+        "title": "Get Your Free Account",
+        "firstname": "First Name",
+        "firstname_placeholder": "Your Firstname",
+        "lastname": "Last Name",
+        "lastname_placeholder": "Your Lastname",
+        "phone": "Phone",
+        "phone_placeholder": "Enter Phone Number",
+        "email": "Email",
+        "email_placeholder": "Enter Your Email Address",
+        "password": "Password",
+        "password_placeholder": "Enter Your Password",
+        "referralCode": "Referral Code",
+        "referralCode_placeholder": "Enter Referral Code",
+        "agent": "Agent",
+        "student": "Student",
+        "signup": "Sign Up",
+        "login": "LogIn",
+        "register": "Register",
+        "alreadyanAccount": "Already have an account ? ",
+        "notanAccount": "Don't have account ? ",
+        "signupwith": "Sign up with",
+        "wayEmail": "Email",
+        "wayPhone": "Phone"
+    },
+    "Login": {
+        "title": "Get Login",
+        "option": "Email/Phone",
+        "message": "(phone in international format only)"
+    },
+    "Profile": {
+        "Agent": {
+            "localTimeText": "local time",
+            "serviceTitle": "Service Title",
+            "workhistory": "Work History",
+            "completedJobs": "Completed Jobs",
+            "inProgress": "In Progress",
+            "fixedPrice": "Fixed Price",
+            "privateEarnings": "Private Earnings",
+            "totalEarnings": "Total Earnings",
+            "totalJobs": "Total Jobs",
+            "verifications": "Verifications",
+            "id": "ID: Verified"
+        }
+    },
+    "Inbox": {
+        "inbox": "Inbox",
+        "search": "Search",
+        "createGroup": "Create Group",
+        "groupName": "Group Name",
+        "recepient": "Recepient",
+        "cancel": "Cancel",
+        "save": "Save"
+    },
+    "Referrals": {
+        "inviteText": "Send Invitation",
+        "referrals": "Referrals",
+        "rLink": "Referral Link",
+        "totalSignUp": "Total SignUp"
+    }
+}

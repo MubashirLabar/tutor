@@ -1,0 +1,96 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.homework-help-section {
+  .wrapper {
+    .content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 60px 0px;
+      .hdr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        .title {
+          font-size: 26px;
+          font-weight: 700;
+          color: $color-black-1;
+        }
+        .text {
+          font-size: 15px;
+          color: $color-grey-1;
+          font-weight: 300;
+          max-width: 400px;
+          margin-top: 8px;
+          line-height: 1.6;
+        }
+      }
+      .work-steps {
+        display: flex;
+        align-items: center;
+        margin-top: 55px;
+        @include media("<=phone") {
+          flex-direction: column;
+          margin-top: 30px;
+        }
+        .block {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          text-align: center;
+          &:not(:last-child) {
+            margin-right: 40px;
+            @include media("<=phone") {
+              margin-right: 0px;
+              margin-bottom: 40px;
+            }
+          }
+          .image {
+            height: 110px;
+            min-height: 110px;
+            margin-bottom: 20px;
+          }
+          .meta {
+            display: flex;
+            flex-direction: column;
+            min-height: 80px;
+            @include media("<=phone") {
+              min-height: auto;
+            }
+            .label {
+              font-size: 16px;
+              font-weight: 600;
+              color: $color-black-1;
+            }
+            .txt {
+              font-size: 14px;
+              color: $color-grey-5;
+              line-height: 1.5;
+              margin-top: 3px;
+            }
+          }
+        }
+      }
+      .ftr {
+        display: flex;
+        align-items: center;
+        margin-top: 60px;
+        .button {
+          font-size: 15px;
+          font-weight: 500;
+          color: $color-brand-red;
+          border: 1px solid $color-brand-red;
+          padding: 10px 20px;
+          border-radius: 3px;
+          @include anim;
+          &:hover {
+            color: $color-white;
+            background: $color-brand-red;
+          }
+        }
+      }
+    }
+  }
+}

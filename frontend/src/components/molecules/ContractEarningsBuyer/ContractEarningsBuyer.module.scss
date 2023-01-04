@@ -1,0 +1,131 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.earnings-section {
+  background: $color-white;
+  display: flex;
+  flex-direction: column;
+  .earnings-summary {
+    padding: 20px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $border-color-3;
+    @include media("<=tablet") {
+      padding: 20px $app-pending;
+    }
+    @include media("<=phone") {
+      padding: 20px $app-pending-small;
+    }
+    .block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      @include media("<=tablet") {
+        display: none;
+        &:nth-child(3),
+        &:nth-child(4) {
+          display: flex;
+        }
+      }
+      .label {
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-black-1;
+        margin-bottom: 5px;
+      }
+      .value {
+        font-size: 16px;
+        color: $color-black-1;
+      }
+    }
+  }
+  .remaining-milestone {
+    padding: 16px 26px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color-3;
+    @include media("<=tablet") {
+      padding: 16px $app-pending;
+    }
+    @include media("<=phone") {
+      padding: 16px $app-pending-small;
+    }
+    .label {
+      font-size: 15px;
+      font-weight: 500;
+      color: $color-black-1;
+      flex: 1;
+    }
+    .edit-btn {
+      outline: none;
+      background: transparent;
+      padding: 8px 12px;
+      border: 1px solid $color-brand-red;
+      border-radius: 3px;
+      font-weight: 500;
+      font-size: 13px;
+      color: $color-brand-red;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+  .next-milestones {
+    padding: 20px 26px 70px 26px;
+    display: flex;
+    align-items: center;
+    @include media("<=tablet") {
+      padding: 20px $app-pending 70px $app-pending;
+    }
+    @include media("<=phone") {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px $app-pending-small 30px $app-pending-small;
+    }
+    .meta {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      .label {
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-black-1;
+        margin-bottom: 5px;
+      }
+      .amount-blk {
+        display: flex;
+        align-items: center;
+        .amount {
+          font-size: 16px;
+          color: $color-black-1;
+          margin-right: 6px;
+        }
+        .status {
+          font-size: 12px;
+          color: $color-grey-5;
+          font-weight: 300;
+        }
+      }
+    }
+    .submit-work {
+      outline: none;
+      font-size: 13px;
+      border: 1px solid $color-brand-red;
+      background: $color-brand-red;
+      color: $color-white;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      @include media("<=phone") {
+        width: 100%;
+        margin-top: 20px;
+      }
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}

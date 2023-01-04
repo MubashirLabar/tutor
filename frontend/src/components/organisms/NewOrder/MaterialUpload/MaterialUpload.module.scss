@@ -1,0 +1,132 @@
+@import "src/assets/styles/utils/index.scss";
+@import "src/assets/styles/global/index.scss";
+
+.upload-material-form {
+  .content {
+    padding-bottom: 40px;
+    @include media("<=phone") {
+      padding-bottom: 20px;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $color-black-1;
+      margin-bottom: 20px;
+      @include media("<=phone") {
+        font-size: 20px;
+      }
+    }
+    .material-blk {
+      background: $color-white;
+      border-radius: 5px;
+      width: 520px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      @include media("<=phone") {
+        width: 100%;
+        height: 120px;
+      }
+      .description {
+        font-size: 14px;
+        color: $color-black;
+        line-height: 1.34;
+        resize: none;
+        width: 100%;
+        height: 160px;
+        padding: 18px 14px;
+        &::placeholder {
+          color: $color-grey-5;
+          font-weight: 300;
+        }
+      }
+      .upload-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: rgba($color-brand-red, 0.1);
+        padding: 9px 20px;
+        height: 58px;
+        &::-webkit-scrollbar {
+          width: 5px !important;
+        }
+      }
+      .text {
+        font-size: 14px;
+        color: $color-grey-5;
+        line-height: 1.6;
+        font-weight: 300;
+        .upload-btn {
+          font-weight: 600;
+          color: $color-brand-red;
+          text-decoration: underline;
+        }
+      }
+    }
+    .uploaded-files {
+      .file {
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+        max-width: fit-content;
+        .meta {
+          display: flex;
+          align-items: center;
+          .icon {
+            margin-right: 8px;
+            svg {
+              height: 14px;
+              width: 14px;
+              color: $color-grey-5;
+              margin-top: 2px;
+            }
+          }
+          .txt {
+            font-size: 13px;
+            color: $color-grey-1;
+            @include text-ellipsis;
+          }
+          .delete-btn {
+            height: 28px;
+            width: 28px;
+            min-width: 28px;
+            border-radius: 50%;
+            border: 1px solid #c8c5d4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+            svg {
+              height: 14px;
+              width: 14px;
+              color: $color-grey-5;
+            }
+          }
+        }
+        .progress-bar {
+          width: 100%;
+          height: 6px;
+          background: rgba(237, 113, 46, 0.28);
+          position: relative;
+          @include anim;
+          margin-top: 4px;
+          .bar-fill {
+            background: $color-brand-red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            @include anim;
+          }
+        }
+      }
+    }
+    .note {
+      font-size: 13px;
+      color: #a19f9d;
+      margin-top: 10px;
+    }
+  }
+}

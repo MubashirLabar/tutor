@@ -1,0 +1,143 @@
+@import "src/assets/styles/utils/index.scss";
+@import "src/assets/styles/global/index.scss";
+
+.new-order-page {
+  background: $page-background;
+  min-height: 100vh;
+  .order-ftr {
+    display: flex;
+    align-items: center;
+    .ftr-content {
+      margin-bottom: 50px;
+      width: 100%;
+      @include media("<=tablet") {
+        margin-bottom: 45px;
+      }
+      @include media("<=phone") {
+        margin-bottom: 36px;
+      }
+      .submit-button {
+        height: 42px;
+        width: 200px;
+        background: $color-brand-red;
+        font-size: 14px;
+        color: $color-white;
+        border-radius: 3px;
+        @include media("<=phone") {
+          margin-top: 15px;
+          width: 100%;
+        }
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+  .skip-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 35px;
+    @include media("<=phone") {
+      padding-bottom: 15px;
+    }
+    .msg {
+      font-size: 16px;
+      color: $color-black-1;
+      letter-spacing: 0.3px;
+      text-align: center;
+      line-height: 1.4;
+      @include media("<=phone") {
+        font-size: 14px;
+      }
+      .skip-btn {
+        color: $color-brand-red;
+        font-weight: 500;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .writing-area {
+  }
+  .sample-work-blk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 35px;
+    @include media("<=phoneH") {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @include media("<=phone") {
+      padding-bottom: 20px;
+    }
+    .msg {
+      font-size: 16px;
+      color: $color-black-1;
+      letter-spacing: 0.3px;
+      text-align: center;
+      line-height: 1.4;
+      @include media("<=phone") {
+        font-size: 14px;
+      }
+    }
+    .options {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-left: 20px;
+      @include media("<=phoneH") {
+        margin-left: 0px;
+        margin-top: 10px;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+        .radio-btn {
+          height: 16px;
+          width: 16px;
+          min-width: 16px;
+          border-radius: 50%;
+          border: 1px solid $color-grey-5;
+          margin-right: 10px;
+          position: relative;
+          @include anim;
+          &:before {
+            content: "";
+            height: 11px;
+            width: 11px;
+            min-width: 11px;
+            border-radius: 50%;
+            background: $color-grey-5;
+            position: absolute;
+            left: 1.5px;
+            top: 1.5px;
+            @include hide;
+            @include anim;
+          }
+        }
+        .lbl {
+          font-size: 14px;
+          color: $color-black-1;
+          font-weight: 300;
+        }
+        &.active {
+          .radio-btn {
+            border-color: $color-brand-red;
+            &:before {
+              @include show;
+              background: $color-brand-red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

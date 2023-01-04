@@ -1,0 +1,160 @@
+@import "/src/assets/styles/utils/index.scss";
+@import "/src/assets/styles/global/index.scss";
+
+.auth-page {
+  background: $page-background;
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include media("<=phoneH") {
+    padding: 0px 0px;
+    background: $color-white;
+  }
+  .auth-container {
+    width: 520px;
+    margin: 0 auto;
+    padding: 25px 40px;
+    background: $color-white;
+    border-radius: 4px;
+    @include fontInter;
+    @include media("<=phoneH") {
+      width: 100%;
+      padding: 22px 22px;
+    }
+  }
+  .join-section {
+    padding: 80px 0px;
+    width: 480px;
+    @include media("<=phoneH") {
+      width: 100%;
+      padding: 40px $app-pending-small;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: 500;
+      color: $color-black-1;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .options {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      @include media("<=phone") {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .option {
+        height: 130px;
+        width: 100%;
+        padding: 10px 38px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: $color-white;
+        border: 1px solid $border-color-3;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+        &:not(:last-child) {
+          margin-right: 22px;
+          @include media("<=phone") {
+            margin-right: 0px;
+            margin-bottom: 22px;
+          }
+        }
+        .icon {
+          height: 23px;
+          width: 23px;
+          color: $color-brand-red;
+          margin-bottom: 12px;
+        }
+        .lbl {
+          font-size: 14px;
+          color: $color-black-1;
+          font-weight: 500;
+          text-align: center;
+          line-height: 1.3;
+        }
+        .radio-btn {
+          height: 16px;
+          width: 16px;
+          min-width: 16px;
+          border-radius: 50%;
+          border: 1px solid $color-grey-5;
+          position: absolute;
+          @include anim;
+          top: 0px;
+          right: 0px;
+          margin: 11px;
+          &:before {
+            content: "";
+            height: 11px;
+            width: 11px;
+            min-width: 11px;
+            border-radius: 50%;
+            background: $color-grey-5;
+            position: absolute;
+            left: 1.5px;
+            top: 1.5px;
+            @include hide;
+            @include anim;
+          }
+        }
+        &.active {
+          .radio-btn {
+            border-color: $color-brand-red;
+            &:before {
+              @include show;
+              background: $color-brand-red;
+            }
+          }
+        }
+      }
+    }
+    .join-btn {
+      font-size: 14px;
+      width: 100%;
+      padding: 12px 20px;
+      color: #fafafa;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 500;
+      margin-top: 40px;
+      @include anim(0.2s);
+      cursor: pointer;
+      color: $color-white;
+      background: $color-brand-red;
+      @include media("<=phone") {
+        padding: 11px 20px;
+      }
+      &:disabled {
+        background-color: #c8c6c4;
+        cursor: no-drop;
+      }
+    }
+    .already-blk {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 300;
+      color: $color-grey-4;
+      font-weight: 300;
+      margin: 20px 0px;
+      .signup-btn {
+        outline: none;
+        border: none;
+        font-weight: 400;
+        color: $color-brand-red;
+      }
+      &:disabled {
+        cursor: no-drop;
+      }
+    }
+  }
+}

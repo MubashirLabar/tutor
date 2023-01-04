@@ -1,0 +1,99 @@
+@import "src/assets/styles/utils/index.scss";
+@import "src/assets/styles/global/index.scss";
+
+.budget-detail-form {
+  .content {
+    padding-bottom: 40px;
+    @include media("<=phone") {
+      padding-bottom: 20px;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $color-black-1;
+      margin-bottom: 20px;
+      @include media("<=phone") {
+        font-size: 20px;
+      }
+    }
+    .form {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
+      @include media("<=medium") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include media("<=phoneH") {
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+      }
+      @include media("<=phone") {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        .lbl {
+          font-size: 13px;
+          color: $color-black-1;
+          margin-bottom: 7px;
+          span {
+            font-style: 12px;
+            font-weight: 300;
+            color: #a19f9d;
+          }
+        }
+        .iput {
+          width: 100%;
+          background: $color-white;
+          padding: 10px 15px;
+          font-size: 14px;
+          color: $color-black-1;
+          border-radius: 3px;
+          border: 1px solid rgba(17, 17, 19, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          position: relative;
+          &::placeholder {
+            color: #a19f9d;
+          }
+          &.date-picker {
+            cursor: pointer;
+            div {
+              cursor: pointer;
+            }
+            input {
+              border: none;
+              outline: none;
+              padding: 0;
+              margin: 0;
+              text-align: start;
+              font-size: 14px;
+              min-width: 100%;
+              color: $color-black-1;
+            }
+          }
+          .icon {
+            svg {
+              height: 17px;
+              width: 17px;
+              color: #a19f9d;
+            }
+          }
+          .DatePicker {
+            width: 100%;
+          }
+        }
+        .custom-selector {
+          background: $color-white;
+          padding: 10px 15px;
+          .selector-options {
+            top: 46px;
+          }
+        }
+      }
+    }
+  }
+}

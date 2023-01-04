@@ -1,0 +1,477 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.my-courses-page {
+  .wrapper {
+    padding-bottom: 22px;
+    .page-hdr {
+      display: flex;
+      align-items: center;
+      padding: 20px 0px;
+      .back-btn {
+        display: flex;
+        align-items: center;
+        .icon {
+          i {
+            font-size: 18px;
+            color: $color-black-1;
+            margin-right: 3px;
+          }
+        }
+        .lbl {
+          font-size: 14px;
+          color: $color-black-1;
+          margin-bottom: 3px;
+          font-weight: 400;
+        }
+      }
+    }
+    .first-section {
+      display: flex;
+      align-items: center;
+      background: $color-white;
+      padding: 20px;
+      border-radius: 5px;
+      @include media("<=phoneH") {
+        flex-direction: column;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        max-width: 450px;
+        justify-content: space-between;
+        @include media("<=tablet") {
+          max-width: 100%;
+        }
+        @include media("<=phoneH") {
+          margin-bottom: 25px;
+        }
+        .meta {
+          .tag {
+            font-size: 13px;
+            font-weight: 300;
+            color: $color-black-1;
+            margin-bottom: 3px;
+          }
+          .slogn {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.28;
+          }
+          .txt {
+            font-size: 13px;
+            color: $color-grey-5;
+            font-weight: 300;
+            margin-top: 5px;
+          }
+        }
+        .stamp {
+          display: flex;
+          align-items: center;
+          margin-top: 35px;
+          @include media("<=phoneH") {
+            margin-top: 25px;
+          }
+          svg {
+            height: 17px;
+            width: 17px;
+            margin-right: 8px;
+            color: $color-grey-5;
+          }
+          .lbl {
+            font-size: 13px;
+            color: $color-black-1;
+          }
+        }
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .video-blk {
+          border-radius: 5px;
+          overflow: hidden;
+          max-width: 320px;
+          position: relative;
+          @include media("<=tablet") {
+            max-width: 290px;
+          }
+          @include media("<=phoneH") {
+            max-width: 100%;
+          }
+          .video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .play-btn {
+              height: 42px;
+              width: 60px;
+              border-radius: 10px;
+              background: rgba(0, 0, 0, 0.25);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              svg {
+                height: 16px;
+                width: 16px;
+                color: $color-white;
+              }
+            }
+          }
+        }
+      }
+    }
+    .second-section {
+      display: flex;
+      flex-direction: column;
+      background: $color-white;
+      border-radius: 5px;
+      margin-top: 20px;
+      .second-section-hdr {
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+        border-bottom: 1px solid $border-color-2;
+        width: 100%;
+        .nav {
+          display: flex;
+          align-items: center;
+          .item {
+            margin-right: 32px;
+            cursor: pointer;
+            @include anim;
+            font-size: 14px;
+            color: $color-black-1;
+            padding: 20px 13px 11px 13px;
+            position: relative;
+            &:last-child {
+              margin-right: 0px;
+            }
+            &::after {
+              content: "";
+              display: block;
+              width: 0;
+              height: 1.5px;
+              background: $color-brand-red;
+              transition: width 0.3s;
+              position: absolute;
+              bottom: -1px;
+              left: 0;
+              right: 0;
+            }
+            &.active {
+              color: $color-brand-red;
+              &::after {
+                width: 100%;
+              }
+            }
+            &:hover {
+              color: $color-brand-red;
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .course-details {
+        display: flex;
+        flex-direction: column;
+        .details-hdr {
+          border: 1px solid $border-color-2;
+          padding: 12px 20px;
+          margin: 25px 20px 20px 20px;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          @include media("<=phoneH") {
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 22px 20px 18px 20px;
+          }
+          @include media("<=phone") {
+            padding: 14px 20px;
+          }
+          .left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            @include media("<=phoneH") {
+              margin-bottom: 20px;
+            }
+            @include media("<=phone") {
+              margin-bottom: 14px;
+            }
+            @include media("<=phone") {
+              flex-direction: column;
+              align-items: flex-start;
+            }
+            .vector {
+              margin-right: 20px;
+              height: 60px;
+              @include media("<=phone") {
+                height: 52px;
+                margin-right: 0px;
+                margin-bottom: 9px;
+              }
+            }
+            .meta {
+              display: flex;
+              flex-direction: column;
+              .title {
+                font-size: 18px;
+                font-weight: 600;
+                color: $color-black-1;
+                margin-bottom: 4px;
+                letter-spacing: 0.3px;
+                line-height: 1.4;
+                @include media("<=phone") {
+                  font-size: 16px;
+                  margin-bottom: 2px;
+                }
+              }
+              .txt {
+                font-size: 13px;
+                color: $color-grey-5;
+                font-weight: 300;
+                line-height: 1.4;
+              }
+            }
+          }
+          .right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .submit-btn {
+              background: $color-brand-red;
+              color: $color-white;
+              font-size: 13px;
+              padding: 8px 18px;
+              border-radius: 3px;
+            }
+          }
+        }
+        .content {
+          padding: 0px 13px;
+          .course-content {
+            display: flex;
+            flex-direction: column;
+            .title {
+              font-size: 18px;
+              color: $color-black-1;
+              font-weight: 600;
+              padding: 0px 10px;
+              margin-bottom: 15px;
+            }
+            .courses-list {
+              display: grid;
+              grid-column-gap: 20px;
+              grid-row-gap: 20px;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              .course {
+                display: flex;
+                align-items: center;
+                border: 1px solid #dcdcdc;
+                padding: 10px 20px;
+                width: 100%;
+                border-radius: 3px;
+                .icon {
+                  margin-right: 10px;
+                  svg {
+                    height: 18px;
+                    width: 18px;
+                    color: $color-grey-5;
+                  }
+                }
+                .lbl {
+                  font-size: 14px;
+                  color: $color-black-1;
+                  @include text-ellipsis($lines: 1);
+                }
+              }
+            }
+          }
+          .instructors {
+            display: flex;
+            flex-direction: column;
+            margin-top: 24px;
+            padding: 0px 10px;
+            .title {
+              font-size: 18px;
+              color: $color-black-1;
+              font-weight: 600;
+              margin-bottom: 15px;
+            }
+            .instructor {
+              display: flex;
+              align-items: center;
+              margin-bottom: 25px;
+              .image {
+                @include bgImage;
+                height: 65px;
+                width: 65px;
+                min-width: 65px;
+                margin-right: 15px;
+              }
+              .meta {
+                display: flex;
+                flex-direction: column;
+                .nam {
+                  font-size: 16px;
+                  color: $color-black-1;
+                  font-weight: 600;
+                  margin-bottom: 4px;
+                }
+                .txt {
+                  font-size: 13px;
+                  font-weight: 300;
+                  color: $color-grey-5;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Upload Assignment Modal
+.upload-assignment-modal {
+  width: 580px;
+  padding: 20px 30px;
+  @include media("<=phoneH") {
+    width: calc(100vw - 50px);
+  }
+  @include media("<=phone") {
+    width: 100%;
+  }
+  .modal-hdr {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    @include media("<=phone") {
+      margin-bottom: 26px;
+    }
+    .title {
+      width: 100%;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1;
+      @include media("<=phone") {
+        font-size: 16px;
+      }
+    }
+    .close-btn {
+      font-size: 24px;
+      color: $color-grey-5;
+      font-weight: 300;
+      line-height: 1;
+      cursor: pointer;
+    }
+  }
+  .content {
+    .upload-area {
+      background: $color-white;
+      border-radius: 5px;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed #a2a2a2;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      @include media("<=phone") {
+        width: 100%;
+      }
+      .text {
+        font-size: 14px;
+        color: $color-grey-5;
+        line-height: 1.6;
+        font-weight: 300;
+        @include media("<=phone") {
+          font-size: 13px;
+        }
+        .upload-btn {
+          font-weight: 600;
+          color: $color-brand-red;
+          text-decoration: underline;
+        }
+      }
+    }
+    .uploaded-files {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      .note {
+        font-size: 13px;
+        color: #a19f9d;
+      }
+      .file {
+        display: flex;
+        align-items: center;
+        background: #f6f6f6;
+        border: 1px solid #c8c5d4;
+        padding: 3px 7px 3px 9px;
+        max-width: fit-content;
+        border-radius: 2px;
+        margin-bottom: 10px;
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+        .lbl {
+          font-size: 13px;
+          color: $color-black-1;
+          margin-right: 9px;
+          line-height: 1;
+        }
+        .cancel-btn {
+          font-size: 19px;
+          color: $color-black-1;
+          font-weight: 200;
+          line-height: 1;
+          margin-bottom: 1px;
+        }
+      }
+    }
+    .modal-ftr {
+      margin-top: 40px;
+      margin-bottom: 15px;
+      @include media("<=phone") {
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .action-btn {
+          font-size: 14px;
+          color: $color-white;
+          background: $color-brand-red;
+          min-width: 150px;
+          padding: 9px 18px;
+          border-radius: 3px;
+          @include media("<=phone") {
+            min-width: 120px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "./../../../assets/styles/utils/index.scss";
+
+.Guest__sidebar--Root {
+  transition: left 0.5s ease-in-out;
+  background-color: $color-white;
+  height: calc(100vh - 64px);
+  width: 224px;
+  display: none;
+
+  .sidebar__links {
+    @include flex-column-center;
+    margin-top: 40px;
+    margin-left: 16px;
+    margin-right: 16px;
+
+    .link__container {
+      @include flex-row;
+      border-radius: 4px;
+      padding: 19px 16px;
+      color: $color-grey-5;
+
+      /* 
+      .link-icon {
+        font-size: 18px;
+        margin-right: 13px;
+      } */
+
+      .link-text {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+      }
+
+      &.isActive,
+      &:hover {
+        background: $color-primary;
+        color: $color-white;
+        cursor: pointer;
+
+        .link-text {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  @include Mobile_Portrait {
+    display: block;
+    @include drop-shadow-medium;
+    overflow-x: hidden;
+    width: 70vw;
+    position: absolute;
+    z-index: 5;
+    left: -70vw;
+
+    &.mobile__open {
+      left: 0;
+    }
+  }
+}

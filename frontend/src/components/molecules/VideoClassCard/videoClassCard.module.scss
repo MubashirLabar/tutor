@@ -1,0 +1,91 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.video-class-card {
+  background-color: $color-white;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  &.cart {
+    border: 1px solid #eaeaea;
+  }
+  .video-blk {
+    height: 150px;
+    width: 100%;
+    position: relative;
+    @include media("<=phone") {
+      height: 200px;
+    }
+    .video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .play-btn {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        @include anim;
+        &:hover {
+          transform: scale(1.05);
+        }
+        svg {
+          height: 15px;
+          width: 15px;
+          color: $color-brand-red;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+  .meta {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 14px;
+    .label {
+      font-size: 14px;
+      line-height: 1.32;
+      @include text-ellipsis($lines: 2);
+    }
+    .by {
+      font-size: 12px;
+      color: $color-grey-5;
+      margin-top: 4px;
+      @include text-ellipsis($lines: 1);
+    }
+    .price {
+      margin-top: 10px;
+      font-size: 16px;
+      color: $color-black-1;
+      font-weight: 500;
+    }
+  }
+  .ftr {
+    display: flex;
+    align-items: center;
+    padding: 0px 14px;
+    margin-bottom: 17px;
+    .add-btn {
+      width: 100%;
+      padding: 12px 20px;
+      background: $color-brand-red;
+      font-size: 13px;
+      color: $color-white;
+      font-weight: 500;
+      border-radius: 4px;
+      line-height: 1.15;
+    }
+  }
+}

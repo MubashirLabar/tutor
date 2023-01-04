@@ -1,0 +1,27 @@
+@import "/src/assets/styles/utils/index.scss";
+@import "/src/assets/styles/global/index.scss";
+
+.spinner-loader.spinner {
+  animation: spinner-loader 800ms linear infinite;
+  .spinner-icon {
+    width: 25px;
+    height: 25px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: transparent;
+    border-top-color: $color-brand-red;
+    border-left-color: $color-brand-red;
+    border-radius: 50%;
+  }
+}
+
+@keyframes spinner-loader {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

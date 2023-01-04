@@ -1,0 +1,22 @@
+
+
+# dependencies
+/node_modules
+/dist
+
+# testing
+/coverage
+**/coverage
+
+# misc
+.vscode
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
+.env
+.env.build
+public/*

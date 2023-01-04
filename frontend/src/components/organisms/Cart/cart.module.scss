@@ -1,0 +1,169 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.cart-page {
+  background: $color-white;
+  min-height: calc(100vh - 75px);
+  .wrapper {
+    .content {
+      padding: 35px 0px;
+      @include media("<=phoneH") {
+        padding: 28px 0px;
+      }
+      .page-hdr {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        .page-title {
+          font-size: 20px;
+          color: $color-black-1;
+          font-weight: 600;
+          line-height: 1;
+        }
+        .total-videos {
+          font-size: 14px;
+          color: $color-black-1;
+          margin-left: 18px;
+          line-height: 1;
+          margin-top: 1px;
+        }
+      }
+      .cart-items {
+        .cart-item {
+          border: 1px solid $border-color-1;
+          padding: 12px;
+          display: flex;
+          width: 75%;
+          @include media("<=desktop") {
+            width: 100%;
+          }
+          @include media("<=phoneH") {
+            flex-direction: column;
+          }
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+          .poster {
+            @include bgImage(4px);
+            height: 100px;
+            width: 115px;
+            min-width: 115px;
+            overflow: hidden;
+            margin-right: 15px;
+            @include media("<=phoneH") {
+              width: 100%;
+              height: 120px;
+              margin-bottom: 10px;
+            }
+          }
+          .cart-item-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0px;
+            .row {
+              display: flex;
+              align-items: flex-start;
+              flex: 1;
+              &:not(:last-child) {
+                margin-bottom: 9px;
+              }
+              .lit {
+                flex: 2;
+                margin-right: 20px;
+                @include media("<=tablet") {
+                  margin-right: 15px;
+                  max-width: 82%;
+                }
+                @include media("<=phoneH") {
+                  max-width: 75%;
+                  margin-right: 0px;
+                }
+              }
+              .rit {
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
+                min-width: fit-content;
+              }
+              .meta {
+                display: flex;
+                flex-direction: column;
+                max-width: 570px;
+                @include media("<=phoneH") {
+                  max-width: 100%;
+                  width: 100%;
+                }
+                .label {
+                  font-size: 15px;
+                  color: $color-black-1;
+                  font-weight: 500;
+                  @include text-ellipsis($lines: 1);
+                }
+                .author {
+                  font-size: 13px;
+                  color: $color-grey-5;
+                  margin-top: 2px;
+                }
+              }
+              .price {
+                font-weight: 600;
+                min-width: fit-content;
+              }
+              .del-btn {
+                display: flex;
+                align-items: center;
+                .icon {
+                  margin-right: 8px;
+                  svg {
+                    height: 17px;
+                    width: 17px;
+                    color: $color-brand-red;
+                  }
+                }
+                .lbl {
+                  font-size: 13px;
+                  color: $color-brand-red;
+                }
+              }
+              .checkout-btn {
+                font-size: 13px;
+                color: $color-white;
+                background: $color-brand-red;
+                padding: 8px 16px;
+                min-width: 150px;
+                border-radius: 3px;
+                text-align: center;
+              }
+              &.actions {
+                align-items: flex-end;
+                @include media("<=phoneH") {
+                  align-items: center;
+                }
+              }
+            }
+          }
+        }
+      }
+      .more-videos-section {
+        margin-top: 56px;
+        .title {
+          font-size: 20px;
+          color: $color-black-1;
+          font-weight: 600;
+          line-height: 1;
+          margin-bottom: 18px;
+        }
+        .videos-list {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          grid-column-gap: 25px;
+          grid-row-gap: 25px;
+          .video-class-card {
+            border: 1px solid $border-color-1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import "/src/assets/styles/utils/index.scss";
+@import "/src/assets/styles/global/index.scss";
+
+.app-footer {
+  background: #fff;
+  border-top: 1px solid $border-color;
+  padding: 22px 0;
+  .wrapper {
+    .ftr-row {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 50px 0px 50px 0px;
+      @include media("<=phone") {
+        padding: 10px 0px 30px 0px;
+      }
+      .logo {
+        font-size: 26px;
+        font-weight: 700;
+        color: $color-brand-red;
+        margin-bottom: 14px;
+        @include media("<=phone") {
+          margin-bottom: 22px;
+        }
+      }
+      .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include media("<=phone") {
+          flex-direction: column;
+        }
+        .link {
+          font-size: 14px;
+          color: $color-black-1;
+          text-align: center;
+          &:not(:last-child) {
+            margin-right: 40px;
+            @include media("<=tablet") {
+              margin-right: 30px;
+            }
+            @include media("<=phone") {
+              margin-right: 0px;
+              margin-bottom: 28px;
+            }
+          }
+        }
+      }
+    }
+    .copy-right {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid $border-color;
+      padding: 22px 0px;
+      @include media("<=phone") {
+        padding: 20px 0px;
+      }
+      .copyright-txt {
+        font-size: 13px;
+        color: $color-black-1;
+        @include media("<=phone") {
+          font-size: 12px;
+          margin-right: 5px;
+        }
+      }
+      .socials {
+        display: flex;
+        align-items: center;
+        .media {
+          &:not(:last-child) {
+            margin-right: 20px;
+            @include media("<=phone") {
+              margin-right: 10px;
+            }
+          }
+          .icon {
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+}

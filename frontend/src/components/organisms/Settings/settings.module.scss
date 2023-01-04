@@ -1,0 +1,88 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.setting-root {
+  .wrapper {
+    padding: 22px 2.5%;
+    display: flex;
+    align-items: flex-start;
+    @include media("<=tablet") {
+      flex-direction: column;
+    }
+    .setting-tabs {
+      width: 200px;
+      margin-right: 20px;
+      @include media("<=medium") {
+        width: 180px;
+      }
+      @include media("<=tablet") {
+        width: 100%;
+        margin-right: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .title {
+        color: $color-black-1;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 13px;
+        @include media("<=tablet") {
+          min-width: fit-content;
+          margin-right: 20px;
+          margin-bottom: 0px;
+          flex: 1;
+          display: none;
+        }
+        @include media("<=phone") {
+          display: none;
+        }
+      }
+      .custom-selector {
+        background: $color-white;
+        display: none;
+        @include media("<=tablet") {
+          width: 250px;
+          display: flex;
+        }
+        @include media("<=phone") {
+          width: 100%;
+        }
+      }
+      .tabs {
+        display: flex;
+        flex-direction: column;
+        @include media("<=tablet") {
+          display: none;
+        }
+        .tab {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          color: $color-black-1;
+          padding: 4px 6px;
+          border-left: 3px solid transparent;
+          cursor: pointer;
+          @include anim;
+          &.active {
+            border-left-color: $color-brand-red;
+          }
+          &:not(:last-child) {
+            margin-bottom: 11px;
+          }
+        }
+      }
+      .small-screen-tabs {
+      }
+    }
+    .setting-content {
+      max-width: 73%;
+      flex: 1;
+      @include media("<=desktop") {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

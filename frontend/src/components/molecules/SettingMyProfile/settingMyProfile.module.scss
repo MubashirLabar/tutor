@@ -1,0 +1,168 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+$borderColor: #c8c5d4;
+
+.setting-contact-info {
+  width: 100%;
+  .info-block {
+    background: #ffffff;
+    border-radius: 7px;
+    width: 100%;
+    @include anim;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    .block-hdr {
+      display: flex;
+      align-items: center;
+      height: 70px;
+      border-bottom: 1px solid #ced5e1;
+      padding: 22px 22px;
+      @include media("<=phone") {
+        padding: 20px 20px;
+      }
+      .hdr-title {
+        color: $color-black-1;
+        font-size: 16px;
+        font-weight: 500;
+        flex: 1;
+      }
+      .edit-btn {
+        border: 1px solid #828282;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        svg {
+          height: 13px;
+          color: #605e5c;
+        }
+      }
+    }
+    .info-wrapper {
+      padding: 23px 22px;
+      @include media("<=phone") {
+        padding: 23px 20px;
+      }
+      .info-row {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        @include media("<=phone") {
+          flex-direction: column;
+        }
+        .item {
+          max-width: 80%;
+          @include media("<=phone") {
+            width: 100%;
+            max-width: 100%;
+          }
+          .lbl {
+            font-size: 15px;
+            font-weight: 500;
+            color: $color-black-1;
+            margin-bottom: 3px;
+          }
+          .txt {
+            font-size: 13px;
+            font-weight: 300;
+            color: $color-black-1;
+          }
+        }
+      }
+      .setting-form {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .field {
+          width: 100%;
+          &:not(:last-child) {
+            margin-right: 22px;
+          }
+          .lbl {
+            font-size: 14px;
+            color: $color-black-1;
+            margin-bottom: 5px;
+          }
+          .iput {
+            font-size: 14px;
+            color: $color-black-1;
+            padding: 8px 18px;
+            border: 1px solid $borderColor;
+            width: 100%;
+            border-radius: 3px;
+            @include anim;
+            &:focus {
+              border-color: $color-brand-red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Categories Modal
+.categories-modal {
+  width: 500px;
+  padding: 0px;
+  @include media("<=tablet") {
+    width: 400px;
+  }
+  @include media("<=phone") {
+    width: 100%;
+  }
+  .modal-hdr {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color-3;
+    padding: 20px 20px;
+    height: 55px;
+    .modal-title {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 600;
+      color: $color-black-1;
+    }
+    .modal-cross-btn {
+      font-size: 24px;
+      color: $color-grey-5;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  }
+  .modal-content {
+    padding: 22px 20px;
+    width: 100%;
+    .block {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 22px;
+      &:last-child {
+        margin-bottom: 5px;
+      }
+      .block-hdr {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .label {
+          flex: 1;
+          font-size: 14px;
+          color: $color-black-1;
+        }
+        .icon {
+          svg {
+            height: 4px;
+            width: 9px;
+            color: $color-grey-5;
+          }
+        }
+      }
+      .block-content {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

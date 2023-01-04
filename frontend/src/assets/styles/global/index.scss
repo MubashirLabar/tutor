@@ -1,0 +1,95 @@
+@import "./../utils/index";
+
+@import "normalize";
+@import "spacing";
+@import "react_modal";
+@import "media";
+
+body * {
+  font-family: "Inter", sans-serif;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* User(Dashboard) Main Layout */
+.layout__main__wrapper {
+  background: $color-grey-0;
+  min-height: calc(100vh - 75px);
+  .layout__guest__content,
+  .layout__main__content {
+    background-color: $color-grey-0;
+    flex: 1;
+    margin-left: $sidebarWidth;
+    @include media("<=desktop") {
+      margin-left: 0px;
+    }
+    @include Mobile_Portrait {
+      width: 100%;
+    }
+  }
+
+  .layout__guest__content {
+    background-color: $color-white;
+  }
+}
+
+/* Guest Main Layout */
+.guest_main_layout-wrapper {
+  background: $color-grey-0;
+  // min-height: calc(100vh - 75px);
+
+  .layout__guest__content,
+  .layout__main__content {
+    background-color: $color-grey-0;
+    flex: 1;
+    @include Mobile_Portrait {
+      width: 100%;
+    }
+  }
+
+  .layout__guest__content {
+    background-color: $color-white;
+  }
+}
+
+/* The Navbar dropdown container */
+.dropdown {
+  overflow: hidden;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 33px;
+  background-color: $color-white;
+  min-width: 160px;
+  @include drop-shadow-small;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a.dropdown-item {
+  text-decoration: none;
+  color: $color-grey-4;
+  padding: 12px 16px;
+  text-align: left;
+  display: block;
+  float: none;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a.dropdown-item:hover {
+  background-color: $color-grey-0;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 10;
+}

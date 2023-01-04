@@ -1,0 +1,204 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.agent-profiles {
+  background-color: $page-background;
+  padding: 35px 0;
+  @include media("<=tablet") {
+    padding: 0px 0px;
+  }
+  .wrapper {
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    @include media("<=tablet") {
+      width: 100%;
+    }
+  }
+  .filter-section {
+    padding: 28px 28px 23px 28px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $border-color;
+    width: 100%;
+    @include media("<=tablet") {
+      padding: 23px 20px 20px 20px;
+    }
+    .searchbar {
+      width: 100%;
+      border: 1px solid #cdcdcd;
+      padding: 9px 16px;
+      border-radius: 3px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .actions {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .icon_button {
+          outline: none;
+          border: none;
+          background: none;
+          display: flex;
+          align-items: center;
+          margin-right: 10px;
+          svg {
+            height: 19px;
+            width: 19px;
+            color: #605e5c;
+          }
+        }
+        .drop-down {
+          svg {
+            height: 9px;
+            width: 9px;
+          }
+        }
+      }
+      .iput {
+        font-size: 14px;
+        color: $color-black-1;
+        width: 100%;
+        outline: none;
+        &::placeholder {
+          color: #a19f9d;
+        }
+      }
+      .cross-btn {
+        height: 17px;
+        width: 17px;
+        min-width: 17px;
+        background: #a19f9d;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1;
+        padding-bottom: 2px;
+      }
+      .search-filter {
+        background: #ffffff;
+        box-shadow: 0px 8px 9px rgba(0, 0, 0, 0.12);
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 40px;
+        z-index: 3;
+        padding: 4px 0;
+        visibility: hidden;
+        opacity: 0;
+        &.open {
+          visibility: visible;
+          opacity: 1;
+          @include dropDownAnim;
+        }
+        .item {
+          width: 100%;
+          font-size: 13px;
+          color: #201f1e;
+          transition: all 0.2s linear;
+          padding: 5px 12px;
+          cursor: pointer;
+          &:hover {
+            background-color: $color-grey-6;
+          }
+        }
+      }
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      margin-top: 14px;
+      line-height: 1;
+      .text {
+        color: $color-black-1;
+        font-size: 14px;
+        font-weight: 500;
+        .tag {
+          color: $color-brand-red;
+        }
+      }
+    }
+  }
+  .profiles-list {
+  }
+  .ftr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // height: 40px;
+    margin-top: 15px;
+    .btn {
+      font-size: 21px;
+      color: $color-grey-5;
+    }
+    .pages {
+      display: flex;
+      align-items: center;
+      margin: 0px 20px;
+
+      .number {
+        height: 30px;
+        width: 30px;
+        min-width: 30px;
+        border-radius: 50%;
+        color: $color-black-1;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include anim;
+
+        // &:first-child,
+        // &:hover {
+        //   background: $color-brand-red;
+        //   color: $color-white;
+        // }
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+      .acitve-page {
+        background: $color-brand-red;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+.sign-btn {
+  background: $color-brand-red;
+  min-width: fit-content;
+  padding: 8px 22px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 300;
+
+  @include media("<=large") {
+    position: initial;
+    width: 86%;
+    padding: 9px;
+    margin-top: 20px;
+    margin-bottom: 26px;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.pagination-total-count {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 5px;
+  padding-bottom: 15px;
+  letter-spacing: 1px;
+}

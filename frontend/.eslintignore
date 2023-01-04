@@ -1,0 +1,13 @@
+*.css
+*.svg
+*.jpeg
+*.jpg
+*.png
+/.idea/
+/node_modules/
+/.vscode
+/bin/
+/cache/
+/jest/
+/coverage/
+.eslintrc.js

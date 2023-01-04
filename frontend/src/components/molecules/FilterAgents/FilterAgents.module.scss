@@ -1,0 +1,112 @@
+@import "/src/assets/styles/utils/index.scss";
+.filter-agents-container {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  @include mobile() {
+    margin-top: 1px;
+  }
+  @include flex-column;
+}
+
+.filter-agents-container_heading > span:first-child {
+  box-sizing: border-box;
+  color: rgb(34, 34, 34);
+  font-family: "Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  line-height: 24px;
+  word-break: break-word;
+  @include mobile() {
+    display: none;
+  }
+}
+
+.filter-agents-container_categories-label > div {
+  @include mobile() {
+    margin-left: 20px;
+  }
+}
+.filter-agents-container__divider {
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  height: 1px;
+  width: 150px;
+  display: block;
+  @include mobile() {
+    display: none;
+  }
+}
+.filter-agents-container_categories {
+  width: 100%;
+}
+
+.filter-agents-container_categories-label {
+  @include flex-row-space-between;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  @include mobile() {
+    @include flex-row-end;
+    margin-bottom: 10px;
+  }
+}
+
+.filter-agents-selector i {
+  cursor: pointer;
+}
+
+.filter-agents-container__list {
+  @include mobile() {
+    display: none;
+  }
+}
+.filter-agents-container__list-modal {
+  display: none;
+  @include mobile() {
+    display: block;
+  }
+}
+.filter-agents-container__list-item {
+  padding-bottom: 10px;
+}
+.filter-agents-container__list-item > button {
+  box-shadow: none;
+  box-sizing: border-box;
+  color: rgb(34, 34, 34);
+  cursor: pointer;
+  text-align: left;
+  text-transform: none;
+  padding: 0px;
+  margin: 0px;
+  align-items: center;
+  font-size: 14px;
+}
+.filter-agents-container__list-item__button:hover {
+  color: $color-success;
+}
+.filter-agents-selector-wrapper {
+  @include mobile() {
+    display: none;
+  }
+}
+.filter-agents-container_categories-label-heading > span {
+  font-size: 14px;
+  @include mobile() {
+    cursor: pointer;
+  }
+}
+
+.filter-agents-container_categories-label-heading-desktop {
+  @include mobile() {
+    display: none;
+  }
+}
+.filter-agents-container_categories-label-heading-mobile {
+  display: none;
+  @include mobile() {
+    display: block;
+  }
+}

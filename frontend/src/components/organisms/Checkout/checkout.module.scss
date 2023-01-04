@@ -1,0 +1,324 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.checkout-page {
+  background: $page-background;
+  .wrapper {
+    .content {
+      padding: 50px 0px;
+      display: flex;
+      @include media("<=tablet") {
+        flex-direction: column;
+        padding: 30px 0px;
+      }
+      .meta {
+        margin-bottom: 18px;
+        .title {
+          font-size: 20px;
+          color: $color-black-1;
+          font-weight: 600;
+          line-height: 1;
+          margin-bottom: 8px;
+        }
+        .text {
+          font-size: 14px;
+          color: $color-black-1;
+        }
+      }
+      .left-side {
+        flex: 2;
+        margin-right: 80px;
+        @include media("<=medium") {
+          margin-right: 20px;
+        }
+        @include media("<=tablet") {
+          margin-right: 0px;
+          margin-bottom: 30px;
+        }
+        .payment-methods {
+          .payment-card {
+            background: $color-white;
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 16px 22px;
+            &:not(:last-child) {
+              margin-bottom: 15px;
+            }
+            @include media("<=phoneH") {
+              padding: 16px 20px;
+            }
+            .card-hdr {
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              .lit {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                .checkbox {
+                  height: 18px;
+                  width: 18px;
+                  min-width: 18px;
+                  border-radius: 50%;
+                  border: 1px solid #8e8e93;
+                  position: relative;
+                  @include anim;
+                  &:before {
+                    content: "";
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 50%;
+                    background: $color-brand-red;
+                    position: absolute;
+                    left: 2px;
+                    top: 2px;
+                    @include anim;
+                    @include hide;
+                  }
+                  &.active {
+                    border-color: $color-brand-red;
+                    &:before {
+                      @include show;
+                    }
+                  }
+                }
+                .icon-blk {
+                  width: 80px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  @include media("<=medium") {
+                    width: 70px;
+                  }
+                  .icon {
+                    height: 23px;
+                    min-width: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    svg {
+                      height: 18px;
+                      width: 18px;
+                      color: $color-grey-5;
+                    }
+                  }
+                }
+
+                .lbl {
+                  font-size: 14px;
+                  color: $color-black-1;
+                }
+              }
+              .rit {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .card {
+                  height: 27px;
+                  @include media("<=medium") {
+                    height: 20px;
+                  }
+                  @include media("<=phoneH") {
+                    height: 12px;
+                  }
+                  &:not(:last-child) {
+                    margin-right: 8px;
+                    @include media("<=medium") {
+                      margin-right: 5px;
+                    }
+                    @include media("<=phoneH") {
+                      margin-right: 3px;
+                    }
+                  }
+                }
+              }
+            }
+            &:not(:first-child) {
+              .card-hdr {
+                .lit {
+                  .icon-blk {
+                    .icon {
+                      border: 1px solid #d9d9d9;
+                      padding: 0px 5px;
+                      border-radius: 3px;
+                      svg {
+                        height: 22px;
+                        width: 22px;
+                      }
+                      &.paypal {
+                        svg {
+                          height: 15px;
+                          width: 15px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .card-content {
+              margin-top: 12px;
+              width: 300px;
+              .field {
+                margin-bottom: 12px;
+                width: 100%;
+                .iput {
+                  border: 1px solid $border-color-1;
+                  padding: 12px 12px;
+                  border-radius: 5px;
+                  color: $color-black-1;
+                  font-size: 14px;
+                  width: 100%;
+                  &::placeholder {
+                    color: #8e8e93;
+                  }
+                }
+              }
+              .row {
+                display: flex;
+                align-items: center;
+                .field {
+                  &:not(:last-child) {
+                    margin-right: 12px;
+                  }
+                }
+              }
+              .remember-blk {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                margin-top: 4px;
+                .checkbox {
+                  height: 20px;
+                  width: 20px;
+                  min-width: 20px;
+                  border: 1px solid $border-color-1;
+                  border-radius: 1px;
+                  margin-right: 7px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  @include anim;
+                  i {
+                    font-size: 18px;
+                    @include anim;
+                    @include hide;
+                  }
+                  &.active {
+                    background: $color-brand-red;
+                    border-color: $color-brand-red;
+                    i {
+                      color: $color-white;
+                      @include show;
+                    }
+                  }
+                }
+                .remember-lbl {
+                  font-size: 14px;
+                  color: $color-grey-5;
+                  font-weight: 300;
+                }
+              }
+              .purchase-btn {
+                background: $color-brand-red;
+                padding: 9px 20px;
+                color: $color-white;
+                font-size: 14px;
+                margin-top: 18px;
+                width: 100%;
+                border-radius: 4px;
+                &:hover {
+                  opacity: 0.95;
+                }
+              }
+            }
+          }
+        }
+      }
+      .right-side {
+        width: 380px;
+        display: flex;
+        flex-direction: column;
+        @include media("<=tablet") {
+          width: 100%;
+        }
+        .purchased-list {
+          background: $color-white;
+          padding: 0px 18px;
+          .purchased-card {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            height: 120px;
+            padding: 18px 0px;
+            border-bottom: 1px solid $border-color;
+            .poster {
+              @include bgImage(4px);
+              width: 93px;
+              min-width: 93px;
+            }
+            .card-content {
+              display: flex;
+              flex-direction: column;
+              margin-left: 15px;
+              width: 100%;
+              .title {
+                font-size: 14px;
+                font-weight: 500;
+                color: $color-black-1;
+                line-height: 1.2;
+                @include text-ellipsis($lines: 2);
+              }
+              .author {
+                font-size: 13px;
+                color: $color-grey-5;
+                margin-top: 6px;
+                line-height: 1;
+                @include text-ellipsis($lines: 1);
+              }
+              .row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex: 1;
+                margin-top: 16px;
+                .price {
+                  font-size: 14px;
+                  color: $color-black-1;
+                  line-height: 1;
+                }
+                .edit-button {
+                  font-size: 12px;
+                  color: $color-grey-5;
+                  text-transform: uppercase;
+                  line-height: 1;
+                }
+              }
+            }
+          }
+        }
+        .ftr {
+          margin: 20px 0px;
+          .total-btn {
+            display: flex;
+            align-items: center;
+            background: #f7f7f7;
+            padding: 9px 20px;
+            width: 100%;
+            justify-content: space-between;
+            .lbl {
+              font-size: 14px;
+              color: $color-black-1;
+            }
+            .value {
+              font-size: 14px;
+              color: $color-black-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

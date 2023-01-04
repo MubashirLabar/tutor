@@ -1,0 +1,191 @@
+@import "src/assets/styles/utils/index.scss";
+@import "src/assets/styles/global/index.scss";
+
+.escrow-section {
+  .content {
+    padding-bottom: 40px;
+    @include media("<=phone") {
+      padding-bottom: 20px;
+    }
+    .meta {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      .title {
+        font-size: 14px;
+        color: $color-black-1;
+        font-weight: 500;
+      }
+      .text {
+        font-size: 13px;
+        font-weight: 300;
+        color: $color-black-1;
+      }
+      &.milestone-meta {
+        margin-top: 10px;
+      }
+    }
+
+    .payment-option {
+      display: flex;
+      flex-direction: column;
+      .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        cursor: pointer;
+        .radio-btn {
+          height: 16px;
+          width: 16px;
+          min-width: 16px;
+          border-radius: 50%;
+          border: 1px solid $color-grey-5;
+          margin-right: 10px;
+          position: relative;
+          @include anim;
+          &:before {
+            content: "";
+            height: 11px;
+            width: 11px;
+            min-width: 11px;
+            border-radius: 50%;
+            background: $color-grey-5;
+            position: absolute;
+            left: 1.5px;
+            top: 1.5px;
+            @include hide;
+            @include anim;
+          }
+        }
+        .lbl {
+          font-size: 13px;
+          color: $color-black-1;
+          font-weight: 300;
+        }
+        &.active {
+          .radio-btn {
+            border-color: $color-brand-red;
+            &:before {
+              @include show;
+              background: $color-brand-red;
+            }
+          }
+        }
+      }
+    }
+    .milestone-list {
+      .form {
+        .form-row {
+          display: flex;
+          align-items: center;
+          position: relative;
+          width: 100%;
+          .row-number {
+            font-size: 14px;
+            font-weight: 400;
+            color: $color-black-1;
+            position: absolute;
+            left: -24px;
+            margin-top: 6px;
+            @include media("<=desktop") {
+              margin-left: -20px;
+            }
+            @include media("<=phone") {
+              position: inherit;
+              left: 0;
+              margin-left: -14px;
+              margin-right: 8px;
+            }
+          }
+          .fields-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 30px;
+            grid-row-gap: 30px;
+            margin-bottom: 20px;
+            width: 100%;
+            @include media("<=medium") {
+              grid-template-columns: repeat(2, 1fr);
+            }
+            @include media("<=phoneH") {
+              grid-column-gap: 20px;
+              grid-row-gap: 20px;
+            }
+            @include media("<=phone") {
+              grid-template-columns: repeat(1, 1fr);
+            }
+            .row-number {
+            }
+            .field {
+              display: flex;
+              flex-direction: column;
+              .lbl {
+                font-size: 13px;
+                color: $color-black-1;
+                margin-bottom: 7px;
+                span {
+                  font-style: 12px;
+                  font-weight: 300;
+                  color: #a19f9d;
+                }
+              }
+              .iput {
+                width: 100%;
+                background: $color-white;
+                padding: 10px 15px;
+                font-size: 14px;
+                color: $color-black-1;
+                border-radius: 3px;
+                border: 1px solid rgba(17, 17, 19, 0.2);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                &::placeholder {
+                  color: #a19f9d;
+                }
+                &.date-picker {
+                  cursor: pointer;
+                  div {
+                    cursor: pointer;
+                  }
+                  input {
+                    border: none;
+                    outline: none;
+                    padding: 0;
+                    margin: 0;
+                    text-align: start;
+                    font-size: 14px;
+                    min-width: 100%;
+                    color: $color-black-1;
+                  }
+                }
+                .icon {
+                  svg {
+                    height: 17px;
+                    width: 17px;
+                    color: #a19f9d;
+                  }
+                }
+                .DatePicker {
+                  width: 100%;
+                }
+              }
+              .custom-selector {
+                background: $color-white;
+                padding: 10px 15px;
+                .selector-options {
+                  top: 46px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .add-milestone {
+        font-size: 14px;
+        color: $color-brand-red;
+      }
+    }
+  }
+}

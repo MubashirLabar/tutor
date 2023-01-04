@@ -1,0 +1,40 @@
+@import "/src/assets/styles/utils/index.scss";
+@import "/src/assets/styles/global/index.scss";
+
+/* Spinner  */
+.spinner-volume {
+  width: 32px;
+  height: 32px;
+  background-color: $color-brand-red;
+  border-radius: 50%;
+  position: relative;
+  -webkit-animation: spVolRot 0.6s infinite linear;
+  animation: spVolRot 0.6s infinite linear;
+}
+.sp-volume:after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  left: 5px;
+  top: 5px;
+  background-color: lighten($color-brand-red, 100%);
+}
+@-webkit-keyframes spVolRot {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@keyframes spVolRot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

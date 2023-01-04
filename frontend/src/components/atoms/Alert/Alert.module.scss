@@ -1,0 +1,21 @@
+@import "../../../assets/styles/colors.scss";
+.alert {
+  padding: 20px;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+.a-alert-danger {
+  background-color: $color-danger;
+}
+.a-alert-info {
+  background-color: $color-info;
+}
+.a-alert-success {
+  background-color: $color-success;
+}
+.a-alert-warning {
+  background-color: $color-warning;
+}

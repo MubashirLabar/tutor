@@ -1,0 +1,199 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.contract-page {
+  min-height: 100vh;
+  background-color: $color-grey-0;
+  @include media("<=medium") {
+    min-height: auto;
+  }
+  .wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @include media("<=medium") {
+      width: 100%;
+      padding: 0px 0px;
+    }
+    .page-hdr {
+      background: $color-white;
+      width: 100%;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      @include media("<=tablet") {
+        margin-bottom: 0px;
+        border-bottom: 1px solid $border-color-3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px $app-pending;
+      }
+      @include media("<=phone") {
+        padding: 20px $app-pending-small;
+      }
+      .left-side {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-right: 0px;
+        @include media("<=medium") {
+          max-width: 70%;
+        }
+        @include media("<=tablet") {
+          max-width: 100%;
+          width: 100%;
+          margin-bottom: 15px;
+        }
+        .title {
+          font-size: 18px;
+          font-weight: 600;
+          color: $color-black-1;
+          @include text-ellipsis;
+          width: 100%;
+          max-width: 90%;
+          @include media("<=tablet") {
+            max-width: 100%;
+          }
+          @include media("<=phone") {
+            font-size: 16px;
+          }
+        }
+        .stamp {
+          color: $color-grey-5;
+          font-size: 13px;
+          font-weight: 300;
+          margin-top: 5px;
+        }
+      }
+      .right-side {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include media("<=tablet") {
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+        .user-info {
+          display: flex;
+          align-items: center;
+          .user_dp-blk {
+            height: 58px;
+            width: 58px;
+            min-width: 58px;
+            position: relative;
+            margin-right: 10px;
+            .user-dp {
+              @include bgImage;
+            }
+            .online-dot {
+              height: 13px;
+              width: 13px;
+              border-radius: 50%;
+              position: absolute;
+              right: 4px;
+              bottom: 0px;
+              background: $color-brand-red;
+              border: 2px solid $color-white;
+            }
+          }
+          .meta {
+            width: 100%;
+            overflow: hidden;
+            .name {
+              font-size: 17px;
+              font-weight: 500;
+              color: $color-black-1;
+              margin-bottom: 2px;
+            }
+            .stamp {
+              font-size: 13px;
+              font-weight: 300;
+              color: $color-grey-5;
+            }
+          }
+        }
+      }
+    }
+    .tab-bar {
+      background-color: $color-white;
+      border-bottom: 1px solid $border-color-2;
+      @include media("<=tablet") {
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        .item {
+          cursor: pointer;
+          margin-right: 3px;
+          @include anim;
+          font-size: 14px;
+          font-weight: 500;
+          color: $color-black-1;
+          padding: 16px 26px 14px 26px;
+          position: relative;
+          text-align: center;
+          min-width: fit-content;
+          @include media("<=tablet") {
+            padding: 16px 20px 14px 20px;
+          }
+          @include media("<=phoneH") {
+            padding: 16px 18px 14px 18px;
+          }
+          &:last-child {
+            margin-right: 0px;
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $color-brand-red;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -1.25px;
+            left: 0;
+            right: 0;
+            @include media("<=phoneH") {
+              height: 3px;
+            }
+          }
+          &.active {
+            color: $color-brand-red;
+            &::after {
+              width: 100%;
+            }
+          }
+          &:hover {
+            color: $color-brand-red;
+            &::after {
+              width: 100%;
+            }
+            @include media("<=phoneH") {
+              color: inherit;
+            }
+          }
+        }
+        .menu-btn {
+          margin-left: 22px;
+          padding-right: 22px;
+          svg {
+            height: 16px;
+            width: 16px;
+            color: $color-grey-1;
+          }
+        }
+      }
+    }
+    .contract-contents {
+    }
+  }
+}

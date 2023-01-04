@@ -1,0 +1,149 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+$borderColor: #c8c5d4;
+
+.setting-text-information {
+  width: 100%;
+  .info-block {
+    background: #ffffff;
+    border-radius: 7px;
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    .block-hdr {
+      display: flex;
+      align-items: center;
+      height: 70px;
+      border-bottom: 1px solid #ced5e1;
+      padding: 22px 22px;
+      @include media("<=phone") {
+        padding: 20px 20px;
+      }
+      .hdr-title {
+        font-size: 16px;
+        font-weight: 500;
+        flex: 1;
+      }
+      .edit-btn {
+        border: 1px solid #828282;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        svg {
+          height: 12px;
+          color: #3b3a39;
+        }
+        &.add-btn {
+          padding-top: 1px;
+        }
+      }
+    }
+    .info-wrapper {
+      padding: 23px 22px;
+      @include media("<=phone") {
+        padding: 23px 20px;
+      }
+      .info-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @include media("<=phone") {
+          flex-direction: column;
+        }
+        .info-row-col {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          &:last-child {
+            margin-bottom: 3px;
+          }
+          .item {
+            .lbl {
+              font-size: 13px;
+              color: $color-black-1;
+              margin-bottom: 7px;
+              @include media("<=phone") {
+                margin-bottom: 5px;
+              }
+            }
+            .txt {
+              font-size: 13px;
+              font-weight: 300;
+              color: $color-black-1;
+            }
+          }
+        }
+      }
+      .setting-form {
+        width: 55%;
+        max-width: 420px;
+        @include media("<=desktop") {
+          max-width: 100%;
+          width: 100%;
+        }
+        .field {
+          width: 100%;
+          margin-bottom: 18px;
+          .lbl {
+            font-size: 14px;
+            color: $color-black-1;
+            margin-bottom: 5px;
+          }
+          .iput {
+            font-size: 14px;
+            color: $color-black-1;
+            padding: 8px 18px;
+            border: 1px solid $borderColor;
+            width: 100%;
+            border-radius: 3px;
+            @include anim;
+            &:focus {
+              border-color: $color-brand-red;
+            }
+          }
+          .field-row {
+            display: flex;
+            align-items: center;
+            .iput {
+              &:first-child {
+                max-width: 160px;
+              }
+              &:not(:last-child) {
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+        .actions {
+          display: flex;
+          align-items: center;
+          margin-top: 22px;
+          .action-btn {
+            padding: 10px;
+            width: 118px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            background: $color-brand-red;
+            border-radius: 3px;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.9;
+            }
+            &.transparent {
+              background: transparent;
+              color: $color-grey-5;
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

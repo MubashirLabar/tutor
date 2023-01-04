@@ -1,0 +1,71 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.searchbar-root {
+  width: 100%;
+  border: 1px solid #cdcdcd;
+  padding: 8px 16px;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  .actions {
+    display: flex;
+    align-items: center;
+    .icon_button {
+      outline: none;
+      border: none;
+      background: none;
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      svg {
+        height: 18px;
+        width: 18px;
+        color: #605e5c;
+      }
+    }
+    .drop-down {
+      svg {
+        height: 5px;
+        height: 5px;
+      }
+    }
+  }
+  .iput {
+    font-size: 14px;
+    color: $color-black-1;
+    &::placeholder {
+      color: #a19f9d;
+    }
+  }
+  .search-filter {
+    background: #ffffff;
+    box-shadow: 0px 8px 9px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 38px;
+    z-index: 3;
+    padding: 4px 0;
+    visibility: hidden;
+    opacity: 0;
+    &.open {
+      visibility: visible;
+      opacity: 1;
+      @include dropDownAnim;
+    }
+    .item {
+      width: 100%;
+      font-size: 13px;
+      color: #201f1e;
+      transition: all 0.2s linear;
+      padding: 5px 12px;
+      cursor: pointer;
+      &:hover {
+        background-color: $color-grey-6;
+      }
+    }
+  }
+}

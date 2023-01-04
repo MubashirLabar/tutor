@@ -1,0 +1,90 @@
+@import "./../../../assets/styles/utils/index.scss";
+@import "./../../../assets/styles/global/index.scss";
+
+.self-learning-page {
+  background: $page-background;
+  min-height: 80vh;
+  .wrapper {
+    .content {
+      padding: 35px 0px 50px 0px;
+      display: flex;
+      @include media("<=tablet") {
+        flex-direction: column;
+        padding: 30px 0px 40px 0px;
+      }
+      .page-sidebar {
+        width: 200px;
+        margin-right: 60px;
+        @include media("<=tablet") {
+          width: 100%;
+          margin-right: 0px;
+          margin-bottom: 40px;
+        }
+        .title {
+          font-size: 14px;
+          font-weight: 500;
+          color: $color-black-1;
+          text-transform: uppercase;
+          line-height: 1;
+        }
+        .categories {
+          width: 100%;
+          .category {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .item {
+              margin-top: 14px;
+              .label {
+                font-size: 13px;
+                color: $color-black-1;
+                flex: 1;
+                cursor: pointer;
+                &.active {
+                  color: $color-brand-red;
+                }
+              }
+              .plus-btn {
+                svg {
+                  height: 12px;
+                  width: 12px;
+                  color: $color-grey-5;
+                }
+              }
+            }
+            .category-hdr {
+              display: flex;
+              align-items: center;
+            }
+            .sub-categories {
+              .item {
+                display: flex;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+      .videos-container {
+        width: 100%;
+        .title {
+          font-size: 20px;
+          font-weight: 600;
+          color: $color-black-1;
+          margin-bottom: 20px;
+          line-height: 1;
+        }
+        .videos-list {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          grid-column-gap: 38px;
+          grid-row-gap: 38px;
+          @include media("<=desktop") {
+            grid-column-gap: 22px;
+            grid-row-gap: 22px;
+          }
+        }
+      }
+    }
+  }
+}

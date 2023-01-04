@@ -1,0 +1,62 @@
+{
+    "Register": {
+        "title": "免费创建账户",
+        "firstname": "名字",
+        "firstname_placeholder": "你的名字",
+        "lastname": "姓氏",
+        "lastname_placeholder": "你的姓氏",
+        "phone": "电话",
+        "phone_placeholder": "輸入電話號碼",
+        "email": "邮箱",
+        "email_placeholder": "输入您的邮箱地址",
+        "password": "密码",
+        "password_placeholder": "输入您的密码",
+        "referralCode": "邀请码",
+        "referralCode_placeholder": "输入邀请码",
+        "agent": "代理人",
+        "student": "學生",
+        "signup": "注册",
+        "login": "登录",
+        "register": "注册",
+        "alreadyanAccount": "已有账户？登录 ",
+        "notanAccount": "沒有帳戶 ？",
+        "signupwith": "使用",
+        "wayEmail": "邮箱",
+        "wayPhone": "电话"
+    },
+    "Login": {
+        "title": "登錄",
+        "option": "邮箱/电话",
+        "message": "(僅限國際格式的電話)"
+    },
+    "Profile": {
+        "Agent": {
+            "localTimeText": "当地时间上午",
+            "serviceTitle": "服务名称",
+            "workhistory": "工作记录",
+            "completedJobs": "已完成工作",
+            "inProgress": "当前工作",
+            "fixedPrice": "固定费用",
+            "privateEarnings": "保密收入",
+            "totalEarnings": "总收入",
+            "totalJobs": "全部工作",
+            "verifications": "认证情况",
+            "id": "已认证"
+        }
+    },
+    "Inbox": {
+        "inbox": "收件箱",
+        "search": "搜索",
+        "createGroup": "建群",
+        "groupName": "群名",
+        "recepient": "接收人",
+        "cancel": "取消",
+        "save": "保存"
+    },
+    "Referrals": {
+        "referrals": "已邀请人员",
+        "inviteText": "发送邀请",
+        "rLink": "邀请链接",
+        "totalSignUp": "注册总数"
+    }
+}

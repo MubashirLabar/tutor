@@ -1,0 +1,86 @@
+$spacing: (
+  "auto": auto,
+  "0": 0,
+  "1": 0.25,
+  "2": 0.5,
+  "3": 0.75,
+  "4": 1,
+  "5": 1.25,
+  "6": 1.5,
+  "7": 1.75,
+  "8": 2,
+  "9": 2.5,
+  "10": 3,
+);
+
+@each $key, $val in $spacing {
+  .cml-#{$key} {
+    margin-left: if($key == auto or $key == "0", $val, #{$val}rem);
+  }
+
+  .cmr-#{$key} {
+    margin-right: if($key == auto or $key == "0", $val, #{$val}rem);
+  }
+
+  .cmt-#{$key} {
+    margin-top: if($key == auto or $key == "0", $val, #{$val}rem);
+  }
+
+  .cmb-#{$key} {
+    margin-bottom: if($key == auto or $key == "0", $val, #{$val}rem);
+  }
+
+  .cmx-#{$key} {
+    @extend .cmt-#{$key};
+    @extend .cmb-#{$key};
+  }
+
+  .cmy-#{$key} {
+    @extend .cml-#{$key};
+    @extend .cmr-#{$key};
+  }
+
+  .cm-#{$key} {
+    @extend .cmx-#{$key};
+    @extend .cmy-#{$key};
+  }
+
+  @if $key != auto {
+    .cpl-#{$key} {
+      padding-left: if($key == "0", $val, #{$val}rem);
+    }
+
+    .cpr-#{$key} {
+      padding-right: if($key == "0", $val, #{$val}rem);
+    }
+
+    .cpt-#{$key} {
+      padding-top: if($key == "0", $val, #{$val}rem);
+    }
+
+    .cpb-#{$key} {
+      padding-bottom: if($key == "0", $val, #{$val}rem);
+    }
+
+    .cpx-#{$key} {
+      @extend .cpt-#{$key};
+      @extend .cpb-#{$key};
+    }
+
+    .cpy-#{$key} {
+      @extend .cpl-#{$key};
+      @extend .cpr-#{$key};
+    }
+
+    .cp-#{$key} {
+      @extend .cpx-#{$key};
+      @extend .cpy-#{$key};
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  .opa-#{$i} {
+      opacity : $i / 10;
+  }
+}
